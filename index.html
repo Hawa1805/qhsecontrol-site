@@ -1,0 +1,3400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QHSE Control — Pilotage industriel</title>
+<meta name="description" content="QHSE Control \u2014 Pilotez vos sites industriels en fran\u00E7ais. Incidents, audits ISO, habilitations, permis de travail centralis\u00E9s sur une seule plateforme SaaS. IA int\u00E9gr\u00E9e, mode offline, con\u00E7u pour l'Afrique de l'Ouest.">
+<meta name="keywords" content="QHSE, s\u00E9curit\u00E9 industrielle, audits ISO, habilitations, permis de travail, Afrique de l'Ouest, SaaS QHSE, ISO 45001, ISO 14001, ISO 9001">
+<meta name="robots" content="index, follow">
+<meta name="author" content="QHSE Control">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qhsecontrol.africa/">
+<meta property="og:title" content="QHSE Control \u2014 Pilotage industriel en fran\u00E7ais">
+<meta property="og:description" content="Incidents, audits ISO, habilitations, permis de travail \u2014 tout centralis\u00E9. IA int\u00E9gr\u00E9e, mode offline terrain. Con\u00E7u pour les industries d'Afrique de l'Ouest.">
+<meta property="og:image" content="https://qhsecontrol.africa/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="QHSE Control">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QHSE Control \u2014 Pilotage industriel en fran\u00E7ais">
+<meta name="twitter:description" content="Incidents, audits ISO, habilitations, permis de travail \u2014 tout centralis\u00E9. IA int\u00E9gr\u00E9e, mode offline terrain.">
+<meta name="twitter:image" content="https://qhsecontrol.africa/og-image.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://qhsecontrol.africa/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2300997a'/><text y='.9em' font-size='70' x='50%' text-anchor='middle' dominant-baseline='top' fill='white'>✓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #ffffff;
+  --bg2:       #ffffff;
+  --bg3:       #f7f7f5;
+  --ink:       #0a0a0a;
+  --ink2:      #111111;
+  --ink3:      #333333;
+  --muted:     #666666;
+  --faint:     #999999;
+  --teal:      #00875a;
+  --teal2:     #00a36c;
+  --teal3:     #00c97e;
+  --teal-bg:   rgba(0,135,90,.06);
+  --teal-mid:  rgba(0,135,90,.16);
+  --teal-glow: rgba(0,163,108,.25);
+  --red:       #e02020;
+  --red-bg:    rgba(224,32,32,.06);
+  --amber:     #c47a00;
+  --amber-bg:  rgba(196,122,0,.07);
+  --border:    #e8e8e6;
+  --border2:   #d4d4d0;
+  --sh:        0 1px 2px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.04);
+  --sh-lg:     0 4px 24px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+  --sh-xl:     0 16px 48px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.04);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
+body { font-family: 'Instrument Sans', sans-serif; background: var(--bg); color: var(--ink); overflow-x: hidden; max-width: 100%; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  height: 60px; padding: 0 40px;
+  display: flex; align-items: center; gap: 0;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(24px) saturate(200%);
+  border-bottom: 1px solid var(--border);
+  transition: all .3s;
+}
+.brand {
+  display: flex; align-items: center; gap: 9px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 15.5px; font-weight: 800; color: var(--ink);
+  text-decoration: none; letter-spacing: -.4px; flex-shrink: 0;
+  margin-right: 40px;
+}
+.brand-icon {
+  width: 30px; height: 30px; border-radius: 7px;
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: white; font-weight: 900;
+  flex-shrink: 0;
+}
+.nav-links { display: flex; gap: 4px; list-style: none; flex: 1; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--muted);
+  text-decoration: none; transition: color .15s;
+  padding: 6px 12px; border-radius: 6px;
+}
+.nav-links a:hover { color: var(--ink); background: var(--bg3); }
+.nav-r { display: flex; gap: 8px; margin-left: auto; align-items: center; }
+.nbtn { padding: 7px 16px; border-radius: 7px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all .15s; }
+.nbtn-ghost { border: 1px solid var(--border); background: transparent; color: var(--ink3); }
+.nbtn-ghost:hover { background: var(--bg3); border-color: var(--border2); }
+.nbtn-cta {
+  background: var(--ink); color: white;
+  border: 1px solid transparent;
+  letter-spacing: -.1px;
+}
+.nbtn-cta:hover { background: var(--ink3); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; padding: 120px 52px 80px;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  position: relative; overflow: hidden;
+  background: #ffffff;
+  max-width: 100%;
+}
+/* Subtle dot grid — ultra-light */
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, #d4d4d0 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: .45;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 30%, transparent 100%);
+}
+/* No orbs — clean */
+.hero-orb { display: none; }
+
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 4px 14px 4px 6px; border-radius: 100px;
+  background: white; border: 1px solid var(--border);
+  font-size: 11.5px; font-weight: 600; color: var(--muted);
+  margin-bottom: 32px; position: relative; z-index: 2;
+  animation: fadeDown .5s ease both;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  letter-spacing: .1px;
+}
+.pill-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal); flex-shrink: 0;
+  animation: blink 3s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 60%{opacity:.3} }
+
+.hero h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(52px, 6.5vw, 88px); font-weight: 800;
+  line-height: .96; letter-spacing: -3.5px; color: var(--ink);
+  max-width: 820px; margin-bottom: 28px;
+  position: relative; z-index: 2;
+  animation: fadeUp .6s .08s ease both;
+}
+.hero h1 .t {
+  color: var(--teal);
+  background: none;
+  -webkit-text-fill-color: var(--teal);
+}
+.hero h1 .g {
+  color: #c8c8c4;
+  -webkit-text-fill-color: #c8c8c4;
+}
+
+.hero-lead {
+  font-size: 17px; line-height: 1.7; color: #555;
+  max-width: 480px; margin: 0 auto 36px;
+  font-weight: 400; letter-spacing: -.1px;
+  position: relative; z-index: 2;
+  animation: fadeUp .6s .16s ease both;
+}
+
+.hero-btns {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  position: relative; z-index: 2; margin-bottom: 56px;
+  animation: fadeUp .6s .24s ease both;
+}
+.btn-primary {
+  padding: 13px 28px; border-radius: 8px;
+  background: var(--ink); color: white; font-size: 14px; font-weight: 600;
+  text-decoration: none; letter-spacing: -.1px;
+  transition: all .15s; display: inline-flex; align-items: center; gap: 7px;
+  border: 1px solid transparent;
+}
+.btn-primary:hover { background: #222; }
+.btn-soft {
+  padding: 13px 24px; border-radius: 8px;
+  background: white; color: var(--ink3); font-size: 14px; font-weight: 500;
+  text-decoration: none; border: 1px solid var(--border);
+  transition: all .15s; letter-spacing: -.1px;
+}
+.btn-soft:hover { border-color: var(--border2); background: var(--bg3); color: var(--ink); }
+
+/* PROOF */
+.proof-row {
+  display: flex; position: relative; z-index: 2;
+  background: white; border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,.05), 0 0 0 1px var(--border);
+  margin-bottom: 64px;
+  animation: fadeUp .6s .32s ease both;
+}
+.proof-item { padding: 20px 36px; text-align: center; border-right: 1px solid var(--border); transition: background .15s; }
+.proof-item:last-child { border-right: none; }
+.proof-item:hover { background: var(--bg3); }
+.pv { font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800; color: var(--ink); line-height: 1; letter-spacing: -1px; }
+.pl { font-size: 11px; color: var(--faint); margin-top: 6px; text-transform: uppercase; letter-spacing: .8px; font-weight: 500; }
+
+/* HERO SCREENSHOT MOCKUP */
+.hero-mockup {
+  position: relative; z-index: 2; width: 100%; max-width: 980px;
+  animation: fadeUp .7s .5s ease both;
+}
+.browser {
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-xl);
+}
+.browser-bar {
+  background: #f1f5f9; padding: 12px 16px;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.bdots { display: flex; gap: 5px; }
+.bd { width: 10px; height: 10px; border-radius: 50%; }
+.bd.r{background:#ff5f57} .bd.y{background:#febc2e} .bd.g{background:#28c840}
+.burl {
+  flex: 1; background: white; border: 1px solid var(--border);
+  border-radius: 6px; padding: 5px 14px; font-size: 11px;
+  color: var(--muted); font-family: 'DM Mono', monospace; margin: 0 14px;
+}
+.browser img { width: 100%; display: block; }
+
+/* Floating KPI cards */
+.kpi-float {
+  position: absolute;
+  background: white; border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 14px 18px;
+  box-shadow: var(--sh-lg);
+  animation: floatCard 6s ease-in-out infinite;
+  z-index: 10; min-width: 160px;
+}
+.kpi-float.kf1 { top: 15%; left: -5%; animation-delay: 0s; }
+.kpi-float.kf2 { top: 40%; right: -4%; animation-delay: -2s; }
+.kpi-float.kf3 { bottom: 15%; left: -3%; animation-delay: -4s; }
+@keyframes floatCard {
+  0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}
+}
+.kf-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--faint); margin-bottom: 4px; }
+.kf-val { font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800; line-height: 1; }
+.kf-val.red { color: var(--red); }
+.kf-val.amber { color: var(--amber); }
+.kf-val.teal { color: var(--teal); }
+.kf-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.kf-bar { height: 4px; border-radius: 2px; margin-top: 8px; background: var(--bg3); overflow: hidden; }
+.kf-bar-fill { height: 100%; border-radius: 2px; animation: barGrow 1.5s ease both; }
+@keyframes barGrow { from{width:0} }
+.hero-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(transparent, var(--bg)); pointer-events: none; }
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeDown { from{opacity:0;transform:translateY(-12px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── LOGOS ── */
+/* ── LOGOS — dark marquee band ── */
+.logos {
+  background: var(--ink);
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.logos::before, .logos::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
+}
+.logos::before { left: 0; background: linear-gradient(90deg, var(--ink), transparent); }
+.logos::after  { right: 0; background: linear-gradient(-90deg, var(--ink), transparent); }
+
+.logos-label {
+  text-align: center; padding: 18px 52px 0;
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,.25);
+}
+.logos-track-wrap { overflow: hidden; padding: 16px 0 20px; }
+.logos-track {
+  display: flex; gap: 0;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.logos-track:hover { animation-play-state: paused; }
+@keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+.lchip {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 28px;
+  font-size: 13px; font-weight: 600; letter-spacing: .3px;
+  color: rgba(255,255,255,.55);
+  white-space: nowrap;
+  border-right: 1px solid rgba(255,255,255,.08);
+  transition: color .25s;
+  cursor: default;
+}
+.lchip:hover { color: var(--teal2); }
+.lchip-icon {
+  width: 28px; height: 28px; border-radius: 7px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+  transition: background .25s, border-color .25s;
+}
+.lchip:hover .lchip-icon { background: var(--teal-bg); border-color: var(--teal-mid); }
+.lchip-sep {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: rgba(255,255,255,.15); margin: 0 4px;
+}
+
+/* ── SECTION BASE ── */
+section { padding: 96px 52px; overflow-x: hidden; }
+.wrap { max-width: 1200px; margin: 0 auto; width: 100%; }
+.ew { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+.ew::before { content:''; width:18px; height:2px; background: var(--teal); border-radius:2px; }
+h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(38px, 4.5vw, 58px); font-weight: 800; line-height: 1.0; letter-spacing: -2px; color: var(--ink); margin-bottom: 16px; }
+h2 .t { color: var(--teal); }
+.lead { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 520px; }
+
+/* ── PROBLEM ── */
+.problem { background: var(--bg3); }
+.problem .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.prob-cards { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+.prob-card {
+  display: flex; gap: 14px; padding: 18px 20px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; transition: all .3s; cursor: default;
+}
+.prob-card:hover { border-color: rgba(220,38,38,.25); background: #fef7f7; transform: translateX(5px); box-shadow: var(--sh); }
+.pico { width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0; background: var(--red-bg); border: 1px solid rgba(220,38,38,.2); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.pt { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.pd { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+.cost-box { background: white; border-radius: 16px; border: 1px solid var(--border); overflow: hidden; box-shadow: var(--sh-lg); position: sticky; top: 86px; }
+.cost-top { padding: 20px 24px; background: linear-gradient(135deg, #fff7f7, #fff0f0); border-bottom: 1px solid rgba(220,38,38,.12); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red); display: flex; align-items: center; gap: 8px; }
+.cost-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; border-bottom: 1px solid var(--border); }
+.cost-row:last-child { border-bottom: none; }
+.cl { font-size: 13px; color: var(--muted); }
+.cv { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 800; color: var(--red); }
+.cv.ok { color: var(--teal); }
+.cost-foot { padding: 20px 24px; background: linear-gradient(135deg, #edf8f4, #e0f5ef); border-top: 1px solid rgba(0,153,122,.15); text-align: center; }
+.cf-big { font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 800; color: var(--teal); }
+.cf-note { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+
+/* ── FEATURES ── */
+.features { background: white; }
+.feat-head { text-align: center; margin-bottom: 52px; }
+.feat-head .lead { margin: 0 auto; text-align: center; }
+/* ── FEATURE CARDS — industrial premium ── */
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-lg);
+}
+.feat-card {
+  background: white;
+  padding: 32px 28px;
+  transition: background .25s;
+  position: relative;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.feat-card::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--fc, var(--teal));
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.feat-card:hover { background: #fafcfb; }
+.feat-card:hover::before { transform: scaleY(1); }
+
+/* Per-card accent colors */
+.feat-card:nth-child(1) { --fc: #dc2626; --fc-bg: rgba(220,38,38,.07); --fc-mid: rgba(220,38,38,.18); }
+.feat-card:nth-child(2) { --fc: #0284c7; --fc-bg: rgba(2,132,199,.07); --fc-mid: rgba(2,132,199,.18); }
+.feat-card:nth-child(3) { --fc: #7c3aed; --fc-bg: rgba(124,58,237,.07); --fc-mid: rgba(124,58,237,.18); }
+.feat-card:nth-child(4) { --fc: #d97706; --fc-bg: rgba(217,119,6,.07); --fc-mid: rgba(217,119,6,.18); }
+.feat-card:nth-child(5) { --fc: #059669; --fc-bg: rgba(5,150,105,.07); --fc-mid: rgba(5,150,105,.18); }
+.feat-card:nth-child(6) { --fc: #0891b2; --fc-bg: rgba(8,145,178,.07); --fc-mid: rgba(8,145,178,.18); }
+
+.fn {
+  font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 500;
+  color: var(--faint); margin-bottom: 20px; letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.fi {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: var(--fc-bg); border: 1px solid var(--fc-mid);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin-bottom: 18px;
+  transition: transform .3s, box-shadow .3s;
+}
+.feat-card:hover .fi {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px var(--fc-mid);
+}
+.ftit {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 17px; font-weight: 700; color: var(--ink);
+  margin-bottom: 10px; letter-spacing: -.4px; line-height: 1.2;
+}
+.fdesc { font-size: 13px; color: var(--muted); line-height: 1.75; flex: 1; }
+.ftag {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 18px; font-size: 10px; padding: 4px 10px;
+  border-radius: 100px; font-weight: 700; letter-spacing: .4px;
+  background: var(--fc-bg); color: var(--fc);
+  border: 1px solid var(--fc-mid);
+  width: fit-content;
+}
+.ftag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--fc); }
+
+/* ── SCREENSHOT SECTIONS ── */
+.ss { background: white; }
+.ss.alt { background: var(--bg3); }
+.ss .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center; }
+.ss .wrap.rev { grid-template-columns: 1.2fr 1fr; }
+.ss .wrap.rev .ss-txt { order: 2; }
+.ss .wrap.rev .ss-img { order: 1; }
+
+.ss-txt .lead { margin-bottom: 24px; }
+.cklist { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.cklist li { display: flex; gap: 10px; font-size: 14px; color: var(--ink3); line-height: 1.5; align-items: flex-start; }
+.ck { width: 20px; height: 20px; border-radius: 50%; background: var(--teal-bg); border: 1px solid var(--teal-mid); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: var(--teal); font-weight: 800; margin-top: 1px; }
+
+.ss-img { position: relative; }
+.img-wrap {
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-xl);
+  transition: transform .5s, box-shadow .5s;
+}
+.img-wrap:hover { transform: translateY(-6px) rotate(-.3deg); box-shadow: 0 28px 64px rgba(0,0,0,.15); }
+.img-wrap img { width: 100%; display: block; }
+.img-glow { position: absolute; inset: -40px; z-index: -1; background: radial-gradient(ellipse at center, var(--teal-bg) 0%, transparent 70%); }
+
+/* Progress bar animation in SS sections */
+.prog-bar { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+.prog-item { display: flex; flex-direction: column; gap: 5px; }
+.prog-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); font-weight: 600; }
+.prog-track { height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
+.prog-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--teal), var(--teal3)); width: 0; transition: width 1.2s ease; }
+
+/* ── COMPARISON ── */
+.comparison { background: var(--bg); }
+.comp-head { text-align: center; margin-bottom: 48px; }
+.comp-head .lead { margin: 0 auto; text-align: center; }
+.comp-table { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--sh); width: 100%; }
+.comp-row { display: grid; grid-template-columns: 2.5fr 1fr 1fr; }
+.comp-row + .comp-row { border-top: 1px solid var(--border); }
+.cc { padding: 15px 24px; font-size: 13px; display: flex; align-items: center; background: white; }
+.cc:nth-child(2) { border-left: 1px solid var(--border); background: #fafbfc; justify-content: center; color: var(--muted); }
+.cc:nth-child(3) { border-left: 1px solid rgba(0,153,122,.2); background: #f0faf7; justify-content: center; }
+.comp-head-row .cc { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 13px 24px; }
+.comp-head-row .cc:nth-child(2) { color: var(--faint); }
+.comp-head-row .cc:nth-child(3) { color: var(--teal); }
+.comp-row:hover .cc { background: #f8f9fb; }
+.comp-row:hover .cc:nth-child(3) { background: #e6f7f1; }
+.yes { color: var(--teal); font-weight: 800; font-size: 17px; }
+.no { color: var(--faint); font-size: 15px; }
+.hl { color: var(--teal); font-weight: 700; }
+
+/* ── PRICING ── */
+.pricing { background: var(--bg3); }
+.p-head { text-align: center; margin-bottom: 48px; }
+.p-head .lead { margin: 0 auto; text-align: center; }
+.p-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1020px; margin: 0 auto 56px; }
+.plan { background: var(--bg); border-radius: 16px; border: 1px solid var(--border); padding: 30px; position: relative; transition: all .3s; }
+.plan:hover { transform: translateY(-6px); box-shadow: var(--sh-lg); }
+.plan.pop { background: white; border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-bg), var(--sh-lg); }
+.plan.pop:hover { box-shadow: 0 0 0 3px var(--teal-bg), 0 24px 48px rgba(0,153,122,.12); }
+.p-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--teal); color: white; font-size: 11px; font-weight: 700; padding: 3px 16px; border-radius: 100px; box-shadow: 0 3px 10px var(--teal-glow); }
+.p-name { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 14px; }
+.p-price { font-family: 'Bricolage Grotesque', sans-serif; font-size: 36px; font-weight: 800; color: var(--ink); line-height: 1; margin-bottom: 4px; letter-spacing: -1px; }
+.p-price sup { font-size: 15px; color: var(--muted); font-weight: 600; vertical-align: top; margin-top: 8px; }
+.p-period { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.p-setup { font-size: 12px; padding: 8px 12px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); color: var(--muted); margin-bottom: 20px; }
+.p-div { height: 1px; background: var(--border); margin-bottom: 18px; }
+.p-feats { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; }
+.p-feats li { font-size: 13px; color: var(--ink3); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+.p-feats li::before { content:'✓'; color:var(--teal); font-weight:800; flex-shrink:0; font-size:11px; margin-top:2px; }
+.p-btn { width: 100%; padding: 12px; border-radius: 10px; cursor: pointer; font-size: 14px; font-weight: 700; border: 1.5px solid var(--border2); background: white; color: var(--ink); font-family: 'Instrument Sans', sans-serif; transition: all .2s; }
+.p-btn:hover { border-color: var(--teal); color: var(--teal); }
+.plan.pop .p-btn { background: var(--teal); border-color: var(--teal); color: white; box-shadow: 0 4px 14px var(--teal-glow); }
+.plan.pop .p-btn:hover { background: var(--teal2); }
+
+/* RDV FORM */
+.rdv-wrap { max-width: 820px; margin: 0 auto; background: var(--bg); border-radius: 20px; border: 1.5px solid var(--border); overflow: hidden; box-shadow: var(--sh-lg); }
+.rdv-top { padding: 28px 36px; background: linear-gradient(135deg, #edf8f4, #e0f5ef); border-bottom: 1px solid rgba(0,153,122,.15); }
+.rdv-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; color: var(--ink); margin-bottom: 6px; letter-spacing: -.5px; }
+.rdv-sub { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.rdv-body { padding: 28px 36px; }
+.rdv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.rg { display: flex; flex-direction: column; gap: 5px; }
+.rl { font-size: 12px; font-weight: 700; color: var(--ink3); }
+.ri { background: white; border: 1.5px solid var(--border2); border-radius: 10px; padding: 10px 14px; font-size: 14px; color: var(--ink); font-family: 'Instrument Sans', sans-serif; transition: all .2s; width: 100%; }
+.ri:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-bg); }
+.ri::placeholder { color: var(--faint); }
+textarea.ri { resize: vertical; min-height: 76px; }
+.rdv-btn { width: 100%; margin-top: 18px; padding: 15px; background: var(--teal); color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Instrument Sans', sans-serif; box-shadow: 0 4px 16px var(--teal-glow); transition: all .2s; }
+.rdv-btn:hover { background: var(--teal2); transform: translateY(-2px); box-shadow: 0 8px 28px var(--teal-glow); }
+.rdv-btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+.rdv-note { text-align: center; font-size: 12px; color: var(--faint); margin-top: 10px; }
+.rdv-ok { display: none; margin-top: 14px; padding: 14px; background: #edf8f4; border: 1px solid rgba(0,153,122,.25); border-radius: 10px; color: var(--teal); font-size: 14px; font-weight: 600; text-align: center; }
+
+/* ── CTA ── */
+.cta { background: linear-gradient(135deg, #005c49 0%, #007a61 40%, #00c09a 100%); padding: 64px 52px 56px; text-align: center; position: relative; overflow: hidden; }
+.cta::before { content:''; position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 48px 48px; }
+.cta h2 { color: white; font-size: clamp(40px, 5vw, 68px); position: relative; z-index: 2; }
+.cta h2 .g { color: rgba(255,255,255,.55); }
+.cta .lead { color: rgba(255,255,255,.78); margin: 0 auto 44px; text-align: center; position: relative; z-index: 2; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; margin-bottom: 32px; }
+.btn-w { padding: 15px 32px; border-radius: 10px; background: white; color: var(--teal); font-size: 15px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,.15); transition: all .2s; }
+.btn-w:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.2); }
+.btn-wo { padding: 15px 28px; border-radius: 10px; background: transparent; color: white; font-size: 15px; font-weight: 600; text-decoration: none; border: 1.5px solid rgba(255,255,255,.45); transition: all .2s; }
+.btn-wo:hover { background: rgba(255,255,255,.1); border-color: white; }
+.cta-meta { font-size: 13px; color: rgba(255,255,255,.6); position: relative; z-index: 2; }
+.cta-meta a { color: rgba(255,255,255,.82); text-decoration: none; }
+.cta-meta a:hover { color: white; }
+
+/* ── FOOTER ── */
+/* ── FOOTER — rich 4-col ── */
+footer {
+  background: var(--ink2);
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding: 64px 52px 32px;
+  color: white;
+}
+.ft-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1200px; margin: 0 auto;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.ft-brand { display: flex; flex-direction: column; gap: 14px; }
+.ft-brand-row { display: flex; align-items: center; gap: 10px; }
+.ft-name {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px; font-weight: 800; color: white;
+}
+.ft-tagline {
+  font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.7;
+  max-width: 240px;
+}
+.ft-socials { display: flex; gap: 8px; margin-top: 4px; }
+.ft-social {
+  width: 34px; height: 34px; border-radius: 8px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; text-decoration: none; color: rgba(255,255,255,.55);
+  transition: all .2s;
+}
+.ft-social:hover { background: var(--teal-bg); border-color: var(--teal-mid); color: var(--teal2); }
+
+.ft-col-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.3);
+  margin-bottom: 16px;
+}
+.ft-links {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.ft-links a {
+  font-size: 13px; color: rgba(255,255,255,.5);
+  text-decoration: none; transition: color .2s;
+  display: flex; align-items: center; gap: 6px;
+}
+.ft-links a:hover { color: white; }
+.ft-links a::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.2); flex-shrink: 0; transition: background .2s; }
+.ft-links a:hover::before { background: var(--teal2); }
+
+.ft-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1200px; margin: 24px auto 0;
+  font-size: 12px; color: rgba(255,255,255,.22);
+  flex-wrap: wrap; gap: 12px;
+}
+.ft-copy { font-size: 12px; color: rgba(255,255,255,.22); }
+.ft-iso {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.ft-iso-badge {
+  padding: 3px 10px; border-radius: 5px;
+  border: 1px solid rgba(255,255,255,.12);
+  font-size: 10px; font-weight: 700; letter-spacing: .5px;
+  color: rgba(255,255,255,.3);
+}
+
+/* ── REVEAL ── */
+.r { opacity: 0; transform: translateY(22px); transition: opacity .65s, transform .65s; }
+.r.v { opacity: 1; transform: translateY(0); }
+.r[data-d="1"]{transition-delay:.1s} .r[data-d="2"]{transition-delay:.2s} .r[data-d="3"]{transition-delay:.3s} .r[data-d="4"]{transition-delay:.4s}
+.r-left { opacity: 0; transform: translateX(-32px); transition: opacity .7s, transform .7s; }
+.r-left.v { opacity: 1; transform: translateX(0); }
+.r-right { opacity: 0; transform: translateX(32px); transition: opacity .7s, transform .7s; }
+.r-right.v { opacity: 1; transform: translateX(0); }
+
+
+/* ── PILLARS ── */
+.p-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px; }
+.pillar { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: all .3s; }
+.pillar:hover { border-color: var(--teal-mid); box-shadow: var(--sh-lg); transform: translateY(-3px); }
+.pillar-icon { font-size: 28px; margin-bottom: 14px; }
+.pillar-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -.3px; }
+.pillar-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ── INCLUDED GRID ── */
+.incl-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 20px; }
+.incl-col { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+.incl-title { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 16px; }
+.incl-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.incl-list li { font-size: 13px; color: var(--ink3); display: flex; gap: 8px; align-items: flex-start; }
+.incl-list li::before { content: '✓'; color: var(--teal); font-weight: 800; flex-shrink: 0; font-size: 11px; margin-top: 2px; }
+.incl-cta { background: linear-gradient(135deg, #edf8f4, #e0f5ef); border: 1.5px solid rgba(0,153,122,.2); border-radius: 14px; padding: 28px; }
+.incl-cta-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); margin-bottom: 10px; letter-spacing: -.5px; }
+.incl-cta-sub { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+@media (max-width: 1024px) {
+  .p-pillars { grid-template-columns: 1fr; }
+  .incl-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ── MICRO-ANIMATIONS ── */
+
+/* Compteurs KPI — shimmer sur les chiffres */
+.pv, .kf-val, .cf-big, .cost-big {
+  position: relative;
+}
+
+/* Nav logo pulse */
+/* brand-icon: no pulse on clean theme */
+
+/* Logos section — chip hover lift */
+.lchip { transition: all .25s; }
+
+/* Feature cards — staggered reveal */
+/* feat stagger — kept */
+.feat-grid .feat-card:nth-child(2) { transition-delay: .1s; }
+.feat-grid .feat-card:nth-child(3) { transition-delay: .15s; }
+.feat-grid .feat-card:nth-child(4) { transition-delay: .2s; }
+.feat-grid .feat-card:nth-child(5) { transition-delay: .25s; }
+.feat-grid .feat-card:nth-child(6) { transition-delay: .3s; }
+
+/* Pillar cards stagger */
+.p-pillars .pillar:nth-child(1) { transition-delay: .05s; }
+.p-pillars .pillar:nth-child(2) { transition-delay: .15s; }
+.p-pillars .pillar:nth-child(3) { transition-delay: .25s; }
+
+/* Prob cards stagger */
+.prob-card { transition: all .3s cubic-bezier(.34,1.56,.64,1); }
+
+/* Screenshot sections — subtle parallax handled in JS */
+.img-wrap { will-change: transform; }
+
+/* Teal underline animate on h2 */
+h2 .t {
+  color: var(--teal);
+  -webkit-text-fill-color: var(--teal);
+}
+
+/* Proof strip — number count-up already done, add glow on hover */
+.proof-item:hover .pv {
+  color: var(--teal);
+  transition: color .3s;
+}
+
+/* CTA section grid animation */
+.cta::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: gridDrift 20s linear infinite;
+}
+.cta-orb {
+  position: absolute; border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  pointer-events: none;
+  animation: ctaOrbFloat ease-in-out infinite;
+}
+.cta-orb.co1 { width:300px; height:300px; top:-80px; left:-60px; animation-duration:8s; }
+.cta-orb.co2 { width:200px; height:200px; bottom:-40px; right:80px; animation-duration:11s; animation-delay:-4s; }
+.cta-orb.co3 { width:120px; height:120px; top:40%; right:20%; animation-duration:7s; animation-delay:-2s; }
+@keyframes ctaOrbFloat {
+  0%,100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+.cta-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px 6px 10px; border-radius: 100px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+  font-size: 12px; font-weight: 600; color: rgba(255,255,255,.9);
+  margin-bottom: 24px; position: relative; z-index: 2;
+}
+.cta-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: white; animation: blink 2s infinite; }
+.cta-stats {
+  display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+  position: relative; z-index: 2; margin-top: 40px;
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,.15);
+}
+.cta-stat { text-align: center; }
+.cta-stat-val { font-family: 'Bricolage Grotesque', sans-serif; font-size: 30px; font-weight: 800; color: white; line-height: 1; }
+.cta-stat-lbl { font-size: 12px; color: rgba(255,255,255,.65); margin-top: 4px; text-transform: uppercase; letter-spacing: .5px; }
+@keyframes gridDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 48px 48px; }
+}
+
+/* Floating KPI cards — refined */
+.kpi-float {
+  transition: box-shadow .3s;
+}
+.kpi-float:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,.15);
+}
+
+/* Hero pill — animated border */
+/* pill: clean static border */
+
+/* Cost box rows — highlight on hover */
+.cost-row { transition: background .2s; }
+.cost-row:hover { background: var(--bg); }
+
+/* Comp table rows */
+.comp-row { transition: all .15s; }
+
+/* Scroll indicator in hero */
+.scroll-hint {
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  font-size: 11px; color: var(--faint); letter-spacing: 1px; text-transform: uppercase;
+  animation: fadeUp 1s 1.2s ease both;
+  z-index: 10;
+}
+.scroll-arrow {
+  width: 20px; height: 20px; border-right: 2px solid var(--teal-mid);
+  border-bottom: 2px solid var(--teal-mid); transform: rotate(45deg);
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(4px); }
+}
+
+/* Section dividers — animated teal line */
+.ss { position: relative; }
+.ss::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  opacity: .4;
+}
+
+/* incl-cta pulse button */
+.incl-cta .btn-primary {
+  animation: ctaPulse 3s ease-in-out infinite;
+}
+@keyframes ctaPulse {
+  0%,100% { box-shadow: 0 4px 18px var(--teal-glow); }
+  50% { box-shadow: 0 4px 28px var(--teal-glow), 0 0 0 6px rgba(0,192,154,.1); }
+}
+
+
+/* ── CTA ENHANCED ── */
+.cta-stats {
+  display: flex; gap: 0; justify-content: center;
+  flex-wrap: wrap; position: relative; z-index: 2;
+  margin-top: 32px;
+  background: rgba(0,0,0,.15);
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  max-width: 900px; margin-left: auto; margin-right: auto;
+}
+.cta-stat {
+  flex: 1; min-width: 140px; padding: 20px 16px; text-align: center;
+  border-right: 1px solid rgba(255,255,255,.1);
+  transition: background .3s;
+}
+.cta-stat:last-child { border-right: none; }
+.cta-stat:hover { background: rgba(255,255,255,.06); }
+.cta-stat-val {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 40px; font-weight: 800; color: white; line-height: 1;
+  letter-spacing: -1px;
+}
+.cta-stat-unit { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 2px; font-weight: 500; }
+.cta-stat-lbl { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 6px; letter-spacing: .3px; }
+.cta-stat-sep { display: none; }
+.cta-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px 6px 10px; border-radius: 100px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+  font-size: 12px; font-weight: 600; color: rgba(255,255,255,.9);
+  margin-bottom: 24px; position: relative; z-index: 2;
+}
+.cta-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #7fffd4; animation: blink 1.5s infinite; }
+@media (max-width: 640px) {
+  .cta-stat { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,.1); }
+}
+
+/* ── RESPONSIVE ── */
+
+/* ── TABLET (≤1024px) ── */
+@media (max-width: 1024px) {
+  nav { padding: 0 20px; gap: 0; }
+  .nav-links { display: none; }
+  .nav-r { gap: 6px; }
+  .nav-r .nbtn-ghost { display: none; }
+  .nbtn-cta { font-size: 12px; padding: 7px 12px; white-space: nowrap; }
+  section { padding: 64px 24px; }
+  .hero { padding: 96px 24px 56px; text-align: center; }
+  .hero-btns { justify-content: center; }
+  .proof-row { flex-wrap: wrap; }
+  .proof-item { flex: 1 1 140px; }
+  .hero-ss { max-width: 100%; }
+  .problem .wrap { grid-template-columns: 1fr; gap: 40px; }
+  .cost-box { position: static; }
+  .ss .wrap, .ss .wrap.rev { grid-template-columns: 1fr; gap: 36px; }
+  .ss .wrap.rev .ss-txt { order: 1; }
+  .ss .wrap.rev .ss-img { order: 2; }
+  .feat-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .p-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto 40px; }
+  .p-pillars { grid-template-columns: 1fr; gap: 12px; }
+  .incl-grid { grid-template-columns: 1fr; gap: 12px; }
+  .kpi-float { display: none; }
+  .rdv-grid { grid-template-columns: 1fr 1fr; }
+  .rdv-body, .rdv-top { padding: 20px 24px; }
+  .ft-grid { grid-template-columns: 1fr 1fr; gap: 32px; } footer { padding: 40px 24px 24px; }
+  .cta { padding: 60px 24px 48px; }
+  .cta-stats { margin-top: 24px; }
+  .cta-stat { min-width: 120px; padding: 16px 12px; }
+  .cta-stat-val { font-size: 32px; }
+  
+  .img-wrap { transform: none !important; }
+}
+
+/* ── MOBILE (≤640px) ── */
+@media (max-width: 640px) {
+  nav { padding: 0 14px; height: 56px; }
+  .nbtn-cta { padding: 7px 12px; font-size: 11px; white-space: nowrap; }
+  
+  section { padding: 52px 16px; }
+  
+  /* Hero */
+  .hero { padding: 80px 16px 48px; }
+  .hero h1 { font-size: clamp(40px, 11vw, 56px); letter-spacing: -1.5px; line-height: 1.0; }
+  .hero-lead { font-size: 15px; margin-bottom: 28px; }
+  .hero-btns { flex-direction: column; align-items: center; gap: 10px; }
+  .btn-primary, .btn-soft { width: 100%; max-width: 320px; justify-content: center; padding: 14px 24px; font-size: 14px; }
+  .proof-row { border-radius: 10px; }
+  .proof-item { flex: 1 1 50%; padding: 14px 12px; }
+  .pv { font-size: 24px; }
+  .pl { font-size: 10px; }
+  .hero-ss { margin-top: 0; }
+  .scroll-hint { display: none; }
+  
+  /* Problem */
+  .prob-card { padding: 14px 16px; }
+  .pt { font-size: 13px; }
+  .pd { font-size: 12px; }
+  .cost-box { margin-top: 0; }
+  .cost-row { padding: 12px 16px; }
+  .cl { font-size: 12px; }
+  .cv { font-size: 15px; }
+  
+  /* Features */
+  .feat-grid { grid-template-columns: 1fr; gap: 2px; }
+  .feat-card { padding: 20px; }
+  .feat-head { margin-bottom: 36px; }
+  
+  /* Screenshots */
+  .ss-txt h2 { font-size: clamp(30px, 8vw, 40px); letter-spacing: -1px; }
+  .ss-txt .lead { font-size: 14px; }
+  .cklist li { font-size: 13px; }
+  
+  /* Comparison */
+  .comp-table { font-size: 12px; border-radius: 10px; }
+  .cc { padding: 10px 12px; font-size: 11px; }
+  .comp-head-row .cc { font-size: 9px; padding: 10px 12px; letter-spacing: 0; }
+  
+  /* Pricing */
+  .p-grid { max-width: 100%; }
+  .plan { padding: 24px 20px; }
+  .p-price { font-size: 30px; }
+  .pillar { padding: 20px; }
+  .incl-col, .incl-cta { padding: 20px; }
+  
+  /* RDV Form */
+  .rdv-grid { grid-template-columns: 1fr; gap: 10px; }
+  .rdv-wrap { border-radius: 14px; }
+  .rdv-top { padding: 20px; }
+  .rdv-title { font-size: 18px; }
+  .rdv-body { padding: 20px; }
+  .ri { font-size: 16px; } /* prevent iOS zoom */
+  .rdv-btn { font-size: 14px; padding: 14px; }
+  
+  /* CTA */
+  .cta { padding: 48px 16px 40px; }
+  .cta h2 { font-size: clamp(34px, 9vw, 48px) !important; }
+  .cta .lead { font-size: 14px !important; }
+  .cta-btns { flex-direction: column; align-items: center; gap: 10px; }
+  .btn-w { width: 100%; max-width: 320px; justify-content: center; font-size: 14px; padding: 14px; }
+  .btn-wo { width: 100%; max-width: 320px; justify-content: center; text-align: center; padding: 12px; font-size: 13px; }
+  .cta-stats { border-radius: 12px; }
+  .cta-stat { flex: 1 1 50%; min-width: 0; padding: 14px 10px; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .cta-stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.1); }
+  .cta-stat-val { font-size: 28px; }
+  .cta-stat-unit { font-size: 11px; }
+  .cta-stat-lbl { font-size: 10px; }
+  .cta-badge { font-size: 10px; }
+  
+  /* Footer */
+  .ft-grid { grid-template-columns: 1fr; gap: 28px; } footer { padding: 36px 16px 20px; }
+  
+  
+  /* Logos */
+  
+}
+
+/* ── VERY SMALL (≤380px) ── */
+@media (max-width: 380px) {
+  .hero h1 { font-size: 36px; }
+  .proof-item { flex: 1 1 100%; border-right: none; border-bottom: 1px solid var(--border); }
+  .proof-item:last-child { border-bottom: none; }
+}
+
+/* ══════════════════════════════════════════
+   DEMO INTERACTIVE — "Voir en action"
+══════════════════════════════════════════ */
+.demo-section {
+  background: var(--bg3);
+  padding: 96px 52px;
+  overflow: hidden;
+}
+.demo-head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.demo-head .lead { margin: 0 auto; text-align: center; }
+
+/* Tab nav */
+.demo-tabs {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  margin-bottom: 40px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--sh);
+}
+.demo-tab {
+  display: flex; align-items: center; gap: 7px;
+  padding: 9px 20px;
+  border-radius: 7px;
+  font-size: 13px; font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .18s;
+  border: none; background: transparent;
+  letter-spacing: -.1px;
+  white-space: nowrap;
+}
+.demo-tab:hover { color: var(--ink); background: var(--bg3); }
+.demo-tab.active {
+  background: var(--ink);
+  color: white;
+}
+.demo-tab .tab-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.demo-tab.active .tab-dot { background: var(--teal2); }
+.demo-tab:not(.active) .tab-dot { background: var(--faint); }
+
+/* Main demo frame */
+.demo-frame {
+  max-width: 1020px;
+  margin: 0 auto;
+  position: relative;
+}
+.demo-browser {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--sh-xl);
+}
+.demo-browser-bar {
+  background: #f5f5f3;
+  padding: 11px 16px;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.demo-bdots { display: flex; gap: 5px; }
+.demo-bd { width: 10px; height: 10px; border-radius: 50%; }
+.demo-bd.r { background: #ff5f57; }
+.demo-bd.y { background: #febc2e; }
+.demo-bd.g { background: #28c840; }
+.demo-burl {
+  flex: 1; background: white; border: 1px solid var(--border);
+  border-radius: 5px; padding: 5px 12px;
+  font-size: 11px; color: var(--faint);
+  font-family: 'DM Mono', monospace;
+  margin: 0 12px;
+}
+
+/* Screen panels */
+.demo-screens {
+  position: relative;
+  min-height: 480px;
+  background: #0f1117;
+}
+.demo-screen {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity .4s ease;
+  pointer-events: none;
+  display: flex; flex-direction: column;
+}
+.demo-screen.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* App shell inside demo */
+.app-shell {
+  display: flex; height: 480px; overflow: hidden;
+}
+.app-sidebar {
+  width: 200px; flex-shrink: 0;
+  background: #0f1117;
+  border-right: 1px solid rgba(255,255,255,.07);
+  padding: 20px 0;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.app-sidebar-logo {
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 16px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  margin-bottom: 8px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 13px; font-weight: 800; color: white;
+}
+.app-sidebar-logo-icon {
+  width: 24px; height: 24px; border-radius: 6px;
+  background: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: white; font-weight: 900;
+}
+.app-nav-item {
+  display: flex; align-items: center; gap: 9px;
+  padding: 8px 16px; margin: 0 8px;
+  border-radius: 6px;
+  font-size: 12px; font-weight: 500;
+  color: rgba(255,255,255,.4);
+  cursor: default; transition: all .15s;
+}
+.app-nav-item:hover { color: rgba(255,255,255,.7); background: rgba(255,255,255,.05); }
+.app-nav-item.act {
+  background: rgba(255,255,255,.08);
+  color: white;
+}
+.app-nav-icon { font-size: 13px; width: 16px; text-align: center; flex-shrink: 0; }
+.app-nav-badge {
+  margin-left: auto; font-size: 10px; font-weight: 700;
+  background: var(--red); color: white;
+  border-radius: 9px; padding: 1px 6px; line-height: 1.5;
+}
+.app-nav-badge.amber { background: var(--amber); }
+.app-nav-badge.teal { background: var(--teal); }
+
+.app-main {
+  flex: 1; background: #f7f7f5; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.app-topbar {
+  background: white; border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.app-topbar-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 15px; font-weight: 800; color: var(--ink);
+  letter-spacing: -.3px;
+}
+.app-topbar-right { display: flex; gap: 8px; align-items: center; }
+.app-btn {
+  padding: 6px 14px; border-radius: 6px;
+  font-size: 11.5px; font-weight: 600;
+  border: 1px solid var(--border);
+  background: white; color: var(--ink3);
+  cursor: default;
+}
+.app-btn.primary { background: var(--ink); color: white; border-color: transparent; }
+.app-btn.teal { background: var(--teal); color: white; border-color: transparent; }
+
+.app-content { flex: 1; padding: 20px 24px; overflow: hidden; }
+
+/* KPI row */
+.app-kpi-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px; margin-bottom: 16px;
+}
+.app-kpi {
+  background: white; border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 16px;
+}
+.app-kpi-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--faint); margin-bottom: 6px; }
+.app-kpi-val {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 24px; font-weight: 800; line-height: 1;
+  letter-spacing: -1px; color: var(--ink);
+}
+.app-kpi-val.red { color: var(--red); }
+.app-kpi-val.amber { color: var(--amber); }
+.app-kpi-val.teal { color: var(--teal); }
+.app-kpi-sub { font-size: 10px; color: var(--faint); margin-top: 4px; }
+.app-kpi-bar { height: 3px; border-radius: 2px; background: var(--border); margin-top: 8px; overflow: hidden; }
+.app-kpi-fill { height: 100%; border-radius: 2px; }
+
+/* Table */
+.app-table-wrap {
+  background: white; border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+.app-table-head {
+  display: grid; padding: 10px 16px;
+  background: var(--bg3); border-bottom: 1px solid var(--border);
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .8px; color: var(--faint);
+}
+.app-table-row {
+  display: grid; padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px; color: var(--ink3);
+  align-items: center; transition: background .12s;
+}
+.app-table-row:last-child { border-bottom: none; }
+.app-table-row:hover { background: var(--bg3); }
+.app-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 700; padding: 3px 8px;
+  border-radius: 5px; letter-spacing: .2px;
+}
+.app-badge.red { background: var(--red-bg); color: var(--red); }
+.app-badge.amber { background: var(--amber-bg); color: var(--amber); }
+.app-badge.teal { background: var(--teal-bg); color: var(--teal); }
+.app-badge.gray { background: var(--bg3); color: var(--faint); }
+
+/* Form elements in demo */
+.app-form { display: flex; flex-direction: column; gap: 14px; }
+.app-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.app-field { display: flex; flex-direction: column; gap: 5px; }
+.app-label { font-size: 11px; font-weight: 600; color: var(--ink3); letter-spacing: .1px; }
+.app-input {
+  padding: 8px 12px; border-radius: 7px;
+  border: 1px solid var(--border2);
+  font-size: 12px; color: var(--ink3); background: white;
+}
+.app-input.active { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-bg); }
+.app-textarea {
+  padding: 8px 12px; border-radius: 7px;
+  border: 1px solid var(--border2);
+  font-size: 12px; color: var(--ink3); background: white;
+  resize: none; height: 60px;
+}
+.app-select {
+  padding: 8px 12px; border-radius: 7px;
+  border: 1px solid var(--border2);
+  font-size: 12px; color: var(--ink3); background: white;
+  appearance: none;
+}
+
+/* Step indicator */
+.app-steps {
+  display: flex; align-items: center; gap: 0;
+  margin-bottom: 20px;
+}
+.app-step {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; color: var(--faint);
+}
+.app-step.done .app-step-num { background: var(--teal); border-color: var(--teal); color: white; }
+.app-step.act .app-step-num { border-color: var(--ink); color: var(--ink); }
+.app-step-num {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1.5px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800;
+}
+.app-step-line { flex: 1; height: 1px; background: var(--border); margin: 0 8px; min-width: 24px; }
+.app-step.act { color: var(--ink); }
+
+/* AI card */
+.app-ai-card {
+  background: linear-gradient(135deg, #0f1117, #1a1f2e);
+  border: 1px solid rgba(0,153,122,.25);
+  border-radius: 10px; padding: 16px;
+  margin-top: 12px;
+}
+.app-ai-header {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 10px;
+  font-size: 11px; font-weight: 700; color: var(--teal2);
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.app-ai-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--teal2);
+  animation: blink 2s infinite;
+}
+.app-ai-line {
+  height: 8px; border-radius: 4px;
+  background: rgba(255,255,255,.08); margin-bottom: 6px;
+}
+.app-ai-line.w80 { width: 80%; }
+.app-ai-line.w60 { width: 60%; }
+.app-ai-line.w90 { width: 90%; }
+.app-ai-line.w45 { width: 45%; }
+.app-ai-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--teal-bg); border: 1px solid var(--teal-mid);
+  border-radius: 5px; padding: 4px 10px;
+  font-size: 10px; font-weight: 700; color: var(--teal2);
+  margin-top: 4px; margin-right: 6px;
+}
+
+/* Audit checklist */
+.app-checklist { display: flex; flex-direction: column; gap: 6px; }
+.app-check-item {
+  display: flex; align-items: center; gap: 10px;
+  background: white; border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px;
+  font-size: 12px; color: var(--ink3);
+  transition: border-color .15s;
+}
+.app-check-item:hover { border-color: var(--teal-mid); }
+.app-check-box {
+  width: 16px; height: 16px; border-radius: 4px;
+  border: 1.5px solid var(--border2);
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 9px;
+}
+.app-check-box.checked { background: var(--teal); border-color: var(--teal); color: white; }
+.app-check-box.warn { background: var(--amber-bg); border-color: var(--amber); color: var(--amber); }
+.app-check-score {
+  margin-left: auto; font-size: 11px; font-weight: 700;
+  color: var(--faint);
+}
+
+/* Progress ring */
+.app-ring-wrap {
+  display: flex; align-items: center; gap: 20px;
+  background: white; border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 20px; margin-bottom: 12px;
+}
+.app-ring-svg { flex-shrink: 0; }
+.app-ring-info { flex: 1; }
+.app-ring-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.app-ring-sub { font-size: 11px; color: var(--faint); }
+
+/* Tooltip callout */
+.demo-callout {
+  position: absolute;
+  background: var(--ink);
+  color: white;
+  font-size: 11.5px; font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  z-index: 10;
+  animation: calloutPop .3s cubic-bezier(.34,1.56,.64,1) both;
+  letter-spacing: -.1px;
+}
+.demo-callout::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 50%;
+  transform: translateX(-50%);
+  width: 10px; height: 10px;
+  background: var(--ink);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+@keyframes calloutPop {
+  from { opacity: 0; transform: translateY(-6px) scale(.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Step actions bar below demo */
+.demo-actions {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 20px; padding: 0 4px;
+}
+.demo-step-dots {
+  display: flex; gap: 6px;
+}
+.demo-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--border2); transition: all .25s;
+  cursor: pointer;
+}
+.demo-dot.active { background: var(--ink); width: 18px; border-radius: 3px; }
+.demo-nav-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 18px; border-radius: 7px;
+  font-size: 13px; font-weight: 600;
+  border: 1px solid var(--border); background: white;
+  cursor: pointer; transition: all .15s; color: var(--ink3);
+  letter-spacing: -.1px;
+}
+.demo-nav-btn:hover { border-color: var(--border2); background: var(--bg3); }
+.demo-nav-btn.primary { background: var(--ink); color: white; border-color: transparent; }
+.demo-nav-btn.primary:hover { background: #333; }
+.demo-nav-btn:disabled { opacity: .35; pointer-events: none; }
+
+@media (max-width: 1024px) {
+  .demo-section { padding: 64px 24px; }
+  .app-kpi-row { grid-template-columns: 1fr 1fr; }
+  .app-sidebar { display: none; }
+}
+@media (max-width: 640px) {
+  .demo-section { padding: 52px 16px; }
+  .demo-tabs { flex-wrap: wrap; width: 100%; }
+  .demo-tab { flex: 1; justify-content: center; font-size: 12px; padding: 8px 12px; }
+  .app-form-row { grid-template-columns: 1fr; }
+  .app-kpi-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+}
+
+/* ══════════════════════════════════════════
+   TÉMOIGNAGES
+══════════════════════════════════════════ */
+.testi {
+  background: white;
+  padding: 96px 52px;
+}
+.testi-head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.testi-head .lead { margin: 0 auto; text-align: center; }
+
+/* Grid masonry-style */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto 56px;
+}
+
+/* Card */
+.testi-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all .25s;
+  position: relative;
+}
+.testi-card:hover {
+  border-color: var(--border2);
+  box-shadow: 0 8px 32px rgba(0,0,0,.07);
+  transform: translateY(-3px);
+}
+/* Featured card */
+.testi-card.feat {
+  background: var(--ink);
+  border-color: transparent;
+  grid-row: span 1;
+}
+.testi-card.feat .testi-quote { color: rgba(255,255,255,.85); }
+.testi-card.feat .testi-name { color: white; }
+.testi-card.feat .testi-role { color: rgba(255,255,255,.45); }
+.testi-card.feat .testi-stars { color: var(--teal2); }
+.testi-card.feat .testi-tag { background: rgba(255,255,255,.08); color: rgba(255,255,255,.5); border-color: rgba(255,255,255,.1); }
+
+/* Stars */
+.testi-stars {
+  font-size: 13px;
+  color: #f59e0b;
+  letter-spacing: 1px;
+}
+
+/* Quote */
+.testi-quote {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink3);
+  flex: 1;
+  font-style: italic;
+  position: relative;
+}
+.testi-quote::before {
+  content: 'C';
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--teal);
+  display: block;
+  margin-bottom: -8px;
+  font-style: normal;
+  opacity: .4;
+}
+
+/* Author */
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.testi-card.feat .testi-author {
+  border-top-color: rgba(255,255,255,.1);
+}
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  flex-shrink: 0;
+  color: white;
+}
+.testi-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -.2px;
+}
+.testi-role {
+  font-size: 11.5px;
+  color: var(--faint);
+  margin-top: 1px;
+}
+
+/* Tag */
+.testi-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--teal-bg);
+  color: var(--teal);
+  border: 1px solid var(--teal-mid);
+  letter-spacing: .3px;
+  width: fit-content;
+}
+
+/* Bottom trust bar */
+.testi-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 28px 40px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  max-width: 860px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+.trust-val {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.trust-lbl {
+  font-size: 11px;
+  color: var(--faint);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  font-weight: 600;
+}
+.trust-sep {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+}
+
+@media (max-width: 1024px) {
+  .testi { padding: 64px 24px; }
+  .testi-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .testi { padding: 52px 16px; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .testi-trust { gap: 20px; padding: 20px; }
+  .trust-sep { display: none; }
+}
+
+/* ══════════════════════════════════════════
+   COMMENT CA MARCHE
+══════════════════════════════════════════ */
+.howto {
+  background: var(--bg3);
+  padding: 96px 52px;
+}
+.howto-head {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.howto-head .lead { margin: 0 auto; text-align: center; }
+
+/* Steps */
+.howto-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 1060px;
+  margin: 0 auto 64px;
+  position: relative;
+}
+
+/* Connecting line between steps */
+.howto-steps::before {
+  content: '';
+  position: absolute;
+  top: 52px;
+  left: calc(16.66% + 20px);
+  right: calc(16.66% + 20px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--teal-mid), var(--border2), var(--teal-mid));
+  z-index: 0;
+}
+
+.howto-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Number badge */
+.howto-num {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px; font-weight: 800;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+.howto-step:nth-child(1) .howto-num { background: var(--ink); color: white; }
+.howto-step:nth-child(2) .howto-num { background: var(--teal); color: white; }
+.howto-step:nth-child(3) .howto-num { background: white; color: var(--ink); border: 2px solid var(--ink); }
+
+/* Illustration box */
+.howto-illus {
+  width: 100%; max-width: 260px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+}
+.howto-illus-top {
+  background: #f5f5f3;
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.hi-dots { display: flex; gap: 4px; }
+.hi-dot { width: 8px; height: 8px; border-radius: 50%; }
+.hi-dot.r { background: #ff5f57; }
+.hi-dot.y { background: #febc2e; }
+.hi-dot.g { background: #28c840; }
+.howto-illus-body { padding: 16px; }
+
+/* Mini UI elements inside illustrations */
+.mi-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.mi-label { font-size: 10px; color: var(--faint); font-weight: 600; flex-shrink: 0; width: 60px; }
+.mi-bar { flex: 1; height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; }
+.mi-fill { height: 100%; border-radius: 3px; }
+.mi-val { font-size: 10px; font-weight: 700; color: var(--ink3); flex-shrink: 0; width: 28px; text-align: right; }
+
+.mi-field {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 10px;
+  font-size: 10px; color: var(--faint); margin-bottom: 6px;
+}
+.mi-field.active { border-color: var(--teal); background: var(--teal-bg); color: var(--ink3); }
+
+.mi-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 12px; margin-bottom: 7px;
+  display: flex; align-items: center; gap: 8px;
+}
+.mi-icon { font-size: 14px; flex-shrink: 0; }
+.mi-card-t { font-size: 11px; font-weight: 600; color: var(--ink); }
+.mi-card-s { font-size: 10px; color: var(--faint); }
+.mi-badge {
+  margin-left: auto; font-size: 9px; font-weight: 700;
+  padding: 2px 7px; border-radius: 4px;
+}
+.mi-badge.tl { background: var(--teal-bg); color: var(--teal); }
+.mi-badge.am { background: var(--amber-bg); color: var(--amber); }
+.mi-badge.rd { background: var(--red-bg); color: var(--red); }
+
+.mi-check {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 10px; color: var(--ink3); margin-bottom: 6px;
+}
+.mi-ck {
+  width: 14px; height: 14px; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8px; flex-shrink: 0;
+}
+.mi-ck.ok { background: var(--teal); color: white; }
+.mi-ck.no { border: 1.5px solid var(--border2); }
+
+.mi-progress {
+  background: var(--bg3); border-radius: 8px; padding: 10px 12px;
+  margin-bottom: 7px;
+}
+.mi-progress-top {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 10px; font-weight: 600; color: var(--ink3); margin-bottom: 6px;
+}
+.mi-progress-bar { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.mi-progress-fill { height: 100%; border-radius: 2px; background: var(--teal); }
+
+/* Step text */
+.howto-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 20px; font-weight: 800; color: var(--ink);
+  margin-bottom: 10px; letter-spacing: -.5px;
+}
+.howto-desc {
+  font-size: 13.5px; color: var(--muted); line-height: 1.7;
+}
+.howto-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 12px; font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: 100px;
+  background: var(--teal-bg); color: var(--teal);
+  border: 1px solid var(--teal-mid);
+}
+
+/* Bottom CTA row */
+.howto-cta {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .howto { padding: 64px 24px; }
+  .howto-steps { grid-template-columns: 1fr; gap: 48px; }
+  .howto-steps::before { display: none; }
+  .howto-step { flex-direction: row; text-align: left; align-items: flex-start; gap: 20px; padding: 0; }
+  .howto-num { flex-shrink: 0; margin-bottom: 0; }
+  .howto-illus { display: none; }
+}
+@media (max-width: 640px) {
+  .howto-step { flex-direction: column; align-items: center; text-align: center; }
+}
+
+/* ══════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════ */
+.faq-section {
+  background: white;
+  padding: 96px 52px;
+}
+.faq-head { text-align: center; margin-bottom: 52px; }
+.faq-head .lead { margin: 0 auto; text-align: center; }
+
+.faq-inner { max-width: 760px; margin: 0 auto; }
+
+.faq-cats {
+  display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
+  justify-content: center;
+}
+.faq-cat {
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 12px; font-weight: 600;
+  border: 1px solid var(--border); background: white;
+  color: var(--muted); cursor: pointer; transition: all .15s;
+  font-family: 'Instrument Sans', sans-serif;
+}
+.faq-cat:hover { border-color: var(--border2); color: var(--ink); }
+.faq-cat.fon { background: var(--ink); color: white; border-color: transparent; }
+
+.faq-list {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+}
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; cursor: pointer;
+  transition: background .15s; gap: 16px; background: white;
+}
+.faq-q:hover { background: var(--bg3); }
+.faq-q.fopen { background: var(--bg3); }
+.faq-q-text {
+  font-size: 14px; font-weight: 600; color: var(--ink);
+  line-height: 1.4; letter-spacing: -.2px;
+}
+.faq-icon {
+  width: 24px; height: 24px; border-radius: 50%;
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--faint); flex-shrink: 0;
+  transition: all .2s; font-weight: 300; line-height: 1;
+}
+.faq-q.fopen .faq-icon {
+  background: var(--ink); border-color: transparent;
+  color: white; transform: rotate(45deg);
+}
+.faq-a {
+  display: none; padding: 0 24px 20px;
+  font-size: 13.5px; color: var(--muted); line-height: 1.75;
+}
+.faq-a.fopen { display: block; }
+.faq-a strong { color: var(--ink3); font-weight: 600; }
+.faq-a p { margin-bottom: 8px; }
+.faq-a p:last-child { margin-bottom: 0; }
+.faq-atag {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 10px; font-weight: 700; padding: 3px 10px;
+  border-radius: 100px; background: var(--teal-bg);
+  color: var(--teal); border: 1px solid var(--teal-mid); margin-top: 8px;
+}
+
+.faq-cta-box {
+  margin-top: 36px; padding: 26px 30px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.faq-cta-t {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px; font-weight: 800; color: var(--ink);
+  letter-spacing: -.4px; margin-bottom: 4px;
+}
+.faq-cta-s { font-size: 13px; color: var(--muted); }
+
+@media (max-width: 1024px) {
+  .faq-section { padding: 64px 24px; }
+}
+@media (max-width: 640px) {
+  .faq-section { padding: 52px 16px; }
+  .faq-q { padding: 16px 18px; }
+  .faq-a { padding: 0 18px 16px; }
+  .faq-cta-box { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="brand"><div class="brand-icon">✓</div>QHSE Control</a>
+  <ul class="nav-links">
+    <li><a href="#probleme">Problème</a></li>
+    <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+    <li><a href="#plateforme">Plateforme</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+  </ul>
+  <div class="nav-r">
+    <a href="#contact" class="nbtn nbtn-ghost">La plateforme</a>
+    <a href="#rdv" class="nbtn nbtn-cta">Demander une démo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.55;max-width:100%"></canvas>
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+
+  <div class="hero-pill"><span class="pill-dot"></span>Plateforme SaaS · Afrique de l'Ouest</div>
+
+  <h1>Pilotez vos sites<br><span class="t">industriels</span><br><span class="g">en français.</span></h1>
+
+  <p class="hero-lead">Incidents, audits ISO, habilitations, permis de travail — tout centralisé sur une seule plateforme. Avec une IA intégrée, un mode offline terrain et une interface pensée pour les industries d'Afrique de l'Ouest.</p>
+
+  <div class="hero-btns">
+    <a href="#rdv" class="btn-primary">Réserver une démo gratuite →</a>
+    <a href="#fonctionnalites" class="btn-soft">Voir les fonctionnalités</a>
+  </div>
+
+  <div class="proof-row">
+    <div class="proof-item"><div class="pv"><span class="count" data-to="90">0</span>s</div><div class="pl">Déclaration incident</div></div>
+    <div class="proof-item"><div class="pv">100%</div><div class="pl">En français</div></div>
+    <div class="proof-item"><div class="pv">ISO</div><div class="pl">45001 · 14001 · 9001</div></div>
+    <div class="proof-item"><div class="pv">Offline</div><div class="pl">Terrain sans réseau</div></div>
+  </div>
+
+  <!-- Browser mockup with floating KPI cards -->
+  <div class="hero-mockup">
+    <!-- KPI card 1 -->
+    <div class="kpi-float kf1">
+      <div class="kf-label">Incidents 30j</div>
+      <div class="kf-val amber">7</div>
+      <div class="kf-sub">23 total périmètre</div>
+      <div class="kf-bar"><div class="kf-bar-fill" style="width:43%;background:var(--amber)"></div></div>
+    </div>
+    <!-- KPI card 2 -->
+    <div class="kpi-float kf2">
+      <div class="kf-label">Score audits</div>
+      <div class="kf-val teal">59.9%</div>
+      <div class="kf-sub">Objectif 80%</div>
+      <div class="kf-bar"><div class="kf-bar-fill" style="width:60%;background:var(--teal)"></div></div>
+    </div>
+    <!-- KPI card 3 -->
+    <div class="kpi-float kf3">
+      <div class="kf-label">Actions retard</div>
+      <div class="kf-val red">9</div>
+      <div class="kf-sub">Sur 33 actions</div>
+      <div class="kf-bar"><div class="kf-bar-fill" style="width:27%;background:var(--red)"></div></div>
+    </div>
+
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="bdots"><div class="bd r"></div><div class="bd y"></div><div class="bd g"></div></div>
+        <div class="burl">app.qhsecontrol.africa — Katiola Mining (démo)</div>
+      </div>
+      <img src="hero-cockpit.jpg" loading="lazy" alt="Cockpit QHSE Control"
+           onerror="this.style.minHeight='300px';this.style.background='var(--bg)';this.style.display='block'">
+    </div>
+    <div class="hero-fade"></div>
+  <div class="scroll-hint"><div class="scroll-arrow"></div></div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos">
+  <div class="logos-label">Secteurs & marchés couverts</div>
+  <div class="logos-track-wrap">
+    <div class="logos-track" id="logoTrack">
+      <div class="lchip"><span class="lchip-icon">⛏</span>Mines & Or</div>
+      <div class="lchip"><span class="lchip-icon">🏗</span>BTP & Génie Civil</div>
+      <div class="lchip"><span class="lchip-icon">🛢</span>Pétrochimie</div>
+      <div class="lchip"><span class="lchip-icon">🌱</span>Agroalimentaire</div>
+      <div class="lchip"><span class="lchip-icon">⚡</span>Énergie & Utilities</div>
+      <div class="lchip"><span class="lchip-icon">🚢</span>Logistique & Port</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Côte d'Ivoire</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Sénégal</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Burkina Faso</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Mali</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Guinée</div>
+      <div class="lchip"><span class="lchip-icon">🏭</span>Industries lourdes</div>
+      <div class="lchip"><span class="lchip-icon">⛏</span>Mines & Or</div>
+      <div class="lchip"><span class="lchip-icon">🏗</span>BTP & Génie Civil</div>
+      <div class="lchip"><span class="lchip-icon">🛢</span>Pétrochimie</div>
+      <div class="lchip"><span class="lchip-icon">🌱</span>Agroalimentaire</div>
+      <div class="lchip"><span class="lchip-icon">⚡</span>Énergie & Utilities</div>
+      <div class="lchip"><span class="lchip-icon">🚢</span>Logistique & Port</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Côte d'Ivoire</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Sénégal</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Burkina Faso</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Mali</div>
+      <div class="lchip"><span class="lchip-icon">🌍</span>Guinée</div>
+      <div class="lchip"><span class="lchip-icon">🏭</span>Industries lourdes</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLÈME -->
+<section class="problem" id="probleme">
+  <div class="wrap">
+    <div>
+      <div class="ew r">Ce qu'on apporte</div>
+      <h2 class="r" data-d="1">La pilotage<br><span class="t">mérite mieux</span><br>qu'Excel.</h2>
+      <p class="lead r" data-d="2">Certaines tâches QHSE sont techniquement impossibles sans un outil dédié — peu importe votre rigueur ou votre expérience. C'est exactement ce qu'on résout.</p>
+      <div class="prob-cards">
+        <div class="prob-card r" data-d="1"><div class="pico">⚠</div><div><div class="pt">Déclaration guidée en 90 secondes</div><div class="pd">Formulaire guidé depuis le terrain, analyse IA des causes, plan d'actions automatique. Chaque événement est tracé, horodaté, et relié à une action.</div></div></div>
+        <div class="prob-card r" data-d="2"><div class="pico">⏰</div><div><div class="pt">Alertes d'expiration automatiques</div><div class="pd">Chaque expiration d'habilitation déclenche une alerte avant échéance. Validations numériques horodatées. La traçabilité est complète, sans effort manuel.</div></div></div>
+        <div class="prob-card r" data-d="3"><div class="pico">📋</div><div><div class="pt">Rapports d'audit générés en 30 secondes</div><div class="pd">Checklists ISO 45001 / 14001 / 9001, score calculé automatiquement, export PDF en un clic. La mise en forme et la consolidation sont faites pour vous.</div></div></div>
+        <div class="prob-card r" data-d="4"><div class="pico">📡</div><div><div class="pt">Terrain isolé ? Ça fonctionne quand même.</div><div class="pd">Déclarez des incidents, conduisez des audits et gérez les permis de travail sans connexion internet. Synchronisation automatique au retour en zone couverte.</div></div></div>
+      </div>
+    </div>
+    <div class="cost-box r" data-d="2">
+      <div class="cost-top">📊 Valeur mesurable</div>
+      <div class="cost-row"><span class="cl">Amendes + arrêt production</span><span class="cv">5–50M FCFA</span></div>
+      <div class="cost-row"><span class="cl">Audit raté sur dossier</span><span class="cv">2–10M FCFA</span></div>
+      <div class="cost-row"><span class="cl">Procédure judiciaire</span><span class="cv">20M+ FCFA</span></div>
+      <div class="cost-row"><span class="cl">Abonnement Avancé / an</span><span class="cv ok">8,4M FCFA</span></div>
+      <div class="cost-foot"><div class="cf-big">= 1 journée</div><div class="cf-note">d'arrêt de production évitée<br>rembourse l'abonnement annuel entier</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="fonctionnalites">
+  <div class="wrap">
+    <div class="feat-head">
+      <div class="ew r" style="justify-content:center">Fonctionnalités</div>
+      <h2 class="r" data-d="1">Tout ce qu'il faut.<br><span class="t">Rien de superflu.</span></h2>
+      <p class="lead r" data-d="2">Chaque module résout un problème réel. Pas une fonctionnalité de plus, pas une de moins.</p>
+    </div>
+    <div class="feat-grid r">
+      <div class="feat-card"><div class="fn">01 / Incidents</div><div class="fi">⚡</div><div class="ftit">Gestion des incidents</div><div class="fdesc">Déclaration en 90 secondes. Analyse IA des causes, plan d'actions automatique, suivi clôture complet.</div><span class="ftag">IA intégrée</span></div>
+      <div class="feat-card"><div class="fn">02 / Audits</div><div class="fi">🎯</div><div class="ftit">Audits & conformité ISO</div><div class="fdesc">Checklists ISO 9001 / 14001 / 45001. Rapport PDF en 30 secondes. NC liées, suivi des actions correctives.</div><span class="ftag">ISO 45001</span></div>
+      <div class="feat-card"><div class="fn">03 / Habilitations</div><div class="fi">🔐</div><div class="ftit">Habilitations & PTW</div><div class="fdesc">Alertes d'expiration automatiques. Permis de travail guidés. Validations numériques avec traçabilité.</div><span class="ftag">Alertes auto</span></div>
+      <div class="feat-card"><div class="fn">04 / Terrain</div><div class="fi">📡</div><div class="ftit">Mode terrain offline</div><div class="fdesc">Déclarez sans réseau. Synchronisation automatique au retour. Conçu pour les mines et chantiers isolés.</div><span class="ftag">Offline natif</span></div>
+      <div class="feat-card"><div class="fn">05 / Risques</div><div class="fi">⚠</div><div class="ftit">Gestion des risques</div><div class="fdesc">Matrice Gravité×Probabilité. Registre multi-sites. Liens incidents et actions. Priorisation automatique.</div><span class="ftag">Multi-sites</span></div>
+      <div class="feat-card"><div class="fn">06 / IA</div><div class="fi">🤖</div><div class="ftit">Assistant IA QHSE</div><div class="fdesc">Analyse causale, suggestions d'actions correctives, conformité ISO en temps réel. 100% en français.</div><span class="ftag">Claude AI</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DEMO INTERACTIVE -->
+<section class="demo-section r" id="demo">
+  <div class="wrap">
+    <div class="demo-head">
+      <div class="ew r" style="justify-content:center">Démo interactive</div>
+      <h2 class="r" data-d="1">Voyez l'app<br><span class="t">en action.</span></h2>
+      <p class="lead r" data-d="2">Explorez les modules clés — sans inscription, sans installation.</p>
+    </div>
+
+    <!-- Tab nav -->
+    <div class="demo-tabs r" data-d="3">
+      <button class="demo-tab active" onclick="switchTab(0)" id="tab0">
+        <span class="tab-dot"></span> Déclarer un incident
+      </button>
+      <button class="demo-tab" onclick="switchTab(1)" id="tab1">
+        <span class="tab-dot"></span> Audit ISO
+      </button>
+      <button class="demo-tab" onclick="switchTab(2)" id="tab2">
+        <span class="tab-dot"></span> Tableau de bord
+      </button>
+    </div>
+
+    <div class="demo-frame r" data-d="4">
+      <div class="demo-browser">
+        <div class="demo-browser-bar">
+          <div class="demo-bdots">
+            <div class="demo-bd r"></div>
+            <div class="demo-bd y"></div>
+            <div class="demo-bd g"></div>
+          </div>
+          <div class="demo-burl" id="demoUrl">app.qhsecontrol.africa / incidents / nouveau</div>
+        </div>
+
+        <div class="demo-screens" id="demoScreens">
+
+          <!-- ── SCREEN 0 : Déclaration incident (3 étapes) ── -->
+          <div class="demo-screen active" id="screen0">
+            <div class="app-shell">
+              <div class="app-sidebar">
+                <div class="app-sidebar-logo">
+                  <div class="app-sidebar-logo-icon">✓</div>
+                  QHSE Control
+                </div>
+                <div class="app-nav-item act"><span class="app-nav-icon">⚡</span>Incidents<span class="app-nav-badge">3</span></div>
+                <div class="app-nav-item"><span class="app-nav-icon">🎯</span>Audits</div>
+                <div class="app-nav-item"><span class="app-nav-icon">🔐</span>Habilitations</div>
+                <div class="app-nav-item"><span class="app-nav-icon">📡</span>Terrain</div>
+                <div class="app-nav-item"><span class="app-nav-icon">⚠</span>Risques</div>
+                <div class="app-nav-item"><span class="app-nav-icon">🤖</span>IA QHSE</div>
+              </div>
+              <div class="app-main">
+                <div class="app-topbar">
+                  <span class="app-topbar-title">Nouvel incident</span>
+                  <div class="app-topbar-right">
+                    <span class="app-btn">Annuler</span>
+                    <span class="app-btn primary" id="incidentNextBtn" onclick="nextIncidentStep()">Étape suivante →</span>
+                  </div>
+                </div>
+                <div class="app-content" id="incidentContent">
+                  <!-- Step 1 -->
+                  <div id="inc-step1">
+                    <div class="app-steps" style="margin-bottom:20px">
+                      <div class="app-step act"><div class="app-step-num">1</div>Événement</div>
+                      <div class="app-step-line"></div>
+                      <div class="app-step"><div class="app-step-num">2</div>Analyse IA</div>
+                      <div class="app-step-line"></div>
+                      <div class="app-step"><div class="app-step-num">3</div>Actions</div>
+                    </div>
+                    <div class="app-form">
+                      <div class="app-form-row">
+                        <div class="app-field">
+                          <div class="app-label">Type d'incident *</div>
+                          <select class="app-select"><option>Accident corporel</option><option>Presqu'accident</option><option>Déversement</option></select>
+                        </div>
+                        <div class="app-field">
+                          <div class="app-label">Site *</div>
+                          <select class="app-select"><option>Katiola — Zone Mine</option><option>Camp de base</option></select>
+                        </div>
+                      </div>
+                      <div class="app-form-row">
+                        <div class="app-field">
+                          <div class="app-label">Date & heure *</div>
+                          <div class="app-input">19/04/2026 — 14:32</div>
+                        </div>
+                        <div class="app-field">
+                          <div class="app-label">Gravité *</div>
+                          <select class="app-select"><option>Modérée</option><option>Grave</option><option>Critique</option></select>
+                        </div>
+                      </div>
+                      <div class="app-field">
+                        <div class="app-label">Description *</div>
+                        <div class="app-textarea" style="display:flex;align-items:flex-start;padding:8px 12px;font-size:12px;color:#666;background:white;border:1px solid var(--border2);border-radius:7px;height:60px">Chute de matériel lors du chargement du convoyeur C-04, zone centrale...</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Step 2 — AI analysis -->
+                  <div id="inc-step2" style="display:none">
+                    <div class="app-steps" style="margin-bottom:20px">
+                      <div class="app-step done"><div class="app-step-num">✓</div>Événement</div>
+                      <div class="app-step-line"></div>
+                      <div class="app-step act"><div class="app-step-num">2</div>Analyse IA</div>
+                      <div class="app-step-line"></div>
+                      <div class="app-step"><div class="app-step-num">3</div>Actions</div>
+                    </div>
+                    <div class="app-ai-card">
+                      <div class="app-ai-header"><div class="app-ai-dot"></div>Analyse causale IA — en cours…</div>
+                      <div class="app-ai-line w90" id="aiLine1" style="background:rgba(0,153,122,.15)"></div>
+                      <div class="app-ai-line w60" id="aiLine2" style="background:rgba(0,153,122,.1)"></div>
+                      <div class="app-ai-line w80" id="aiLine3" style="background:rgba(0,153,122,.08)"></div>
+                    </div>
+                    <div id="aiResult" style="display:none;margin-top:12px">
+                      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--faint);margin-bottom:10px">Causes identifiées</div>
+                      <div style="display:flex;flex-direction:column;gap:8px">
+                        <div class="app-check-item"><div class="app-check-box checked">✓</div>Défaillance équipement — convoyeur C-04 non inspecté<div class="app-check-score" style="color:var(--red)">Priorité 1</div></div>
+                        <div class="app-check-item"><div class="app-check-box checked">✓</div>Zone de travail non balisée<div class="app-check-score" style="color:var(--amber)">Priorité 2</div></div>
+                        <div class="app-check-item"><div class="app-check-box warn">!</div>EPI non conformes constatés<div class="app-check-score" style="color:var(--amber)">Priorité 2</div></div>
+                      </div>
+                      <div style="margin-top:10px;font-size:11px;color:var(--faint)">
+                        <span class="app-ai-tag">ISO 45001 — §8.1</span>
+                        <span class="app-ai-tag">3 actions correctives suggérées</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Step 3 — Actions -->
+                  <div id="inc-step3" style="display:none">
+                    <div class="app-steps" style="margin-bottom:20px">
+                      <div class="app-step done"><div class="app-step-num">✓</div>Événement</div>
+                      <div class="app-step-line"></div>
+                      <div class="app-step done"><div class="app-step-num">✓</div>Analyse IA</div>
+                      <div class="app-step-line"></div>
+                      <div class="app-step act"><div class="app-step-num">3</div>Actions</div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:8px">
+                      <div class="app-check-item" style="border-color:var(--teal-mid)"><div class="app-check-box checked">✓</div><div style="flex:1"><div style="font-weight:600;font-size:12px">Inspection immédiate convoyeur C-04</div><div style="font-size:10px;color:var(--faint);margin-top:2px">Responsable : Chef de zone · Échéance : 20/04/2026</div></div><div class="app-badge teal">Assignée</div></div>
+                      <div class="app-check-item" style="border-color:var(--amber-bg)"><div class="app-check-box warn">!</div><div style="flex:1"><div style="font-weight:600;font-size:12px">Balisage zone centrale — immédiat</div><div style="font-size:10px;color:var(--faint);margin-top:2px">Responsable : HSE Terrain · Échéance : Aujourd'hui</div></div><div class="app-badge amber">En cours</div></div>
+                      <div class="app-check-item"><div class="app-check-box" style="border-color:var(--border2)"></div><div style="flex:1"><div style="font-weight:600;font-size:12px">Formation EPI — équipe convoyeur</div><div style="font-size:10px;color:var(--faint);margin-top:2px">Responsable : RH · Échéance : 26/04/2026</div></div><div class="app-badge gray">À faire</div></div>
+                    </div>
+                    <div style="margin-top:16px;padding:12px 16px;background:var(--teal-bg);border:1px solid var(--teal-mid);border-radius:8px;display:flex;align-items:center;gap:10px">
+                      <span style="font-size:18px">✓</span>
+                      <div>
+                        <div style="font-size:12px;font-weight:700;color:var(--teal)">Incident enregistré — Réf. INC-2026-047</div>
+                        <div style="font-size:11px;color:var(--muted);margin-top:2px">3 actions créées · Notifications envoyées · Rapport PDF généré</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── SCREEN 1 : Audit ISO ── -->
+          <div class="demo-screen" id="screen1">
+            <div class="app-shell">
+              <div class="app-sidebar">
+                <div class="app-sidebar-logo">
+                  <div class="app-sidebar-logo-icon">✓</div>
+                  QHSE Control
+                </div>
+                <div class="app-nav-item"><span class="app-nav-icon">⚡</span>Incidents</div>
+                <div class="app-nav-item act"><span class="app-nav-icon">🎯</span>Audits<span class="app-nav-badge amber">1</span></div>
+                <div class="app-nav-item"><span class="app-nav-icon">🔐</span>Habilitations</div>
+                <div class="app-nav-item"><span class="app-nav-icon">📡</span>Terrain</div>
+                <div class="app-nav-item"><span class="app-nav-icon">⚠</span>Risques</div>
+                <div class="app-nav-item"><span class="app-nav-icon">🤖</span>IA QHSE</div>
+              </div>
+              <div class="app-main">
+                <div class="app-topbar">
+                  <span class="app-topbar-title">Audit ISO 45001 — Katiola Mining</span>
+                  <div class="app-topbar-right">
+                    <span class="app-btn">Exporter PDF</span>
+                    <span class="app-btn teal">Finaliser l'audit</span>
+                  </div>
+                </div>
+                <div class="app-content">
+                  <div class="app-ring-wrap">
+                    <svg class="app-ring-svg" width="64" height="64" viewBox="0 0 64 64">
+                      <circle cx="32" cy="32" r="26" fill="none" stroke="#e8e8e6" stroke-width="5"/>
+                      <circle cx="32" cy="32" r="26" fill="none" stroke="#00875a" stroke-width="5"
+                        stroke-dasharray="163" stroke-dashoffset="65"
+                        stroke-linecap="round" transform="rotate(-90 32 32)"/>
+                      <text x="32" y="36" text-anchor="middle" font-size="13" font-weight="800" fill="#0a0a0a" font-family="Bricolage Grotesque,sans-serif">60%</text>
+                    </svg>
+                    <div class="app-ring-info">
+                      <div class="app-ring-title">Score de conformité ISO 45001</div>
+                      <div class="app-ring-sub">18 / 30 points de contrôle validés · Objectif : 80%</div>
+                    </div>
+                    <div class="app-badge amber" style="font-size:11px;padding:6px 12px">En cours</div>
+                  </div>
+                  <div class="app-checklist">
+                    <div class="app-check-item"><div class="app-check-box checked">✓</div>§4.1 — Contexte de l'organisme<div class="app-check-score">10/10</div></div>
+                    <div class="app-check-item"><div class="app-check-box checked">✓</div>§6.1 — Actions face aux risques et opportunités<div class="app-check-score">8/10</div></div>
+                    <div class="app-check-item" style="border-color:var(--amber-bg)"><div class="app-check-box warn">!</div>§8.1 — Planification et maîtrise opérationnelles<div class="app-check-score" style="color:var(--amber)">5/10</div></div>
+                    <div class="app-check-item" style="border-color:var(--red-bg)"><div class="app-check-box" style="border-color:var(--red);color:var(--red)">✗</div>§9.2 — Audit interne<div class="app-check-score" style="color:var(--red)">2/10</div></div>
+                    <div class="app-check-item"><div class="app-check-box"></div>§10.3 — Amélioration continue<div class="app-check-score">—</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── SCREEN 2 : Dashboard ── -->
+          <div class="demo-screen" id="screen2">
+            <div class="app-shell">
+              <div class="app-sidebar">
+                <div class="app-sidebar-logo">
+                  <div class="app-sidebar-logo-icon">✓</div>
+                  QHSE Control
+                </div>
+                <div class="app-nav-item"><span class="app-nav-icon">⚡</span>Incidents<span class="app-nav-badge">7</span></div>
+                <div class="app-nav-item"><span class="app-nav-icon">🎯</span>Audits</div>
+                <div class="app-nav-item"><span class="app-nav-icon">🔐</span>Habilitations<span class="app-nav-badge amber">4</span></div>
+                <div class="app-nav-item"><span class="app-nav-icon">📡</span>Terrain</div>
+                <div class="app-nav-item act"><span class="app-nav-icon">⚠</span>Tableau de bord</div>
+                <div class="app-nav-item"><span class="app-nav-icon">🤖</span>IA QHSE</div>
+              </div>
+              <div class="app-main">
+                <div class="app-topbar">
+                  <span class="app-topbar-title">Tableau de bord — Katiola Mining</span>
+                  <div class="app-topbar-right">
+                    <span style="font-size:11px;color:var(--faint);font-family:'DM Mono',monospace">Avril 2026</span>
+                    <span class="app-btn">Exporter</span>
+                  </div>
+                </div>
+                <div class="app-content">
+                  <div class="app-kpi-row">
+                    <div class="app-kpi">
+                      <div class="app-kpi-label">Incidents 30j</div>
+                      <div class="app-kpi-val amber">7</div>
+                      <div class="app-kpi-sub">↑ 2 vs mois dernier</div>
+                      <div class="app-kpi-bar"><div class="app-kpi-fill" style="width:43%;background:var(--amber)"></div></div>
+                    </div>
+                    <div class="app-kpi">
+                      <div class="app-kpi-label">Score audits</div>
+                      <div class="app-kpi-val teal">59.9%</div>
+                      <div class="app-kpi-sub">Objectif 80%</div>
+                      <div class="app-kpi-bar"><div class="app-kpi-fill" style="width:60%;background:var(--teal)"></div></div>
+                    </div>
+                    <div class="app-kpi">
+                      <div class="app-kpi-label">Actions retard</div>
+                      <div class="app-kpi-val red">9</div>
+                      <div class="app-kpi-sub">Sur 33 actions</div>
+                      <div class="app-kpi-bar"><div class="app-kpi-fill" style="width:27%;background:var(--red)"></div></div>
+                    </div>
+                    <div class="app-kpi">
+                      <div class="app-kpi-label">Habilitations</div>
+                      <div class="app-kpi-val amber">4</div>
+                      <div class="app-kpi-sub">Expirent sous 30j</div>
+                      <div class="app-kpi-bar"><div class="app-kpi-fill" style="width:20%;background:var(--amber)"></div></div>
+                    </div>
+                  </div>
+                  <div class="app-table-wrap">
+                    <div class="app-table-head" style="grid-template-columns:2fr 1fr 1fr 1fr">
+                      <span>Événement récent</span><span>Site</span><span>Statut</span><span>Date</span>
+                    </div>
+                    <div class="app-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr">
+                      <span>Chute matériel — convoyeur C-04</span>
+                      <span style="color:var(--faint)">Katiola</span>
+                      <span><div class="app-badge red">Ouvert</div></span>
+                      <span style="color:var(--faint);font-family:'DM Mono',monospace;font-size:11px">19/04</span>
+                    </div>
+                    <div class="app-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr">
+                      <span>Audit ISO 45001 — §9.2</span>
+                      <span style="color:var(--faint)">Zone Mine</span>
+                      <span><div class="app-badge amber">En cours</div></span>
+                      <span style="color:var(--faint);font-family:'DM Mono',monospace;font-size:11px">18/04</span>
+                    </div>
+                    <div class="app-table-row" style="grid-template-columns:2fr 1fr 1fr 1fr">
+                      <span>Permis feu — soudure zone nord</span>
+                      <span style="color:var(--faint)">Camp base</span>
+                      <span><div class="app-badge teal">Clôturé</div></span>
+                      <span style="color:var(--faint);font-family:'DM Mono',monospace;font-size:11px">17/04</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /demo-screens -->
+      </div><!-- /demo-browser -->
+
+      <!-- Nav actions -->
+      <div class="demo-actions">
+        <button class="demo-nav-btn" id="demoPrev" onclick="demoNav(-1)" disabled>← Précédent</button>
+        <div class="demo-step-dots">
+          <div class="demo-dot active" onclick="demoNavTo(0)"></div>
+          <div class="demo-dot" onclick="demoNavTo(1)"></div>
+          <div class="demo-dot" onclick="demoNavTo(2)"></div>
+        </div>
+        <button class="demo-nav-btn primary" id="demoNext" onclick="demoNav(1)">Suivant →</button>
+      </div>
+
+    </div><!-- /demo-frame -->
+
+    <!-- CTA under demo -->
+    <div style="text-align:center;margin-top:40px" class="r" data-d="5">
+      <a href="#rdv" class="btn-primary" style="display:inline-flex">Réserver une vraie démo →</a>
+      <p style="font-size:12px;color:var(--faint);margin-top:10px">20 min · Adapté à votre secteur · Sans engagement</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SCREENSHOT 1 — Cockpit -->
+<section class="ss" id="plateforme">
+  <div class="wrap">
+    <div class="ss-txt r-left">
+      <div class="ew">Cockpit QHSE</div>
+      <h2 data-d="1">Tout votre site<br>en <span class="t">un coup d'œil.</span></h2>
+      <p class="lead" data-d="2">Le cockpit centralise tous vos indicateurs critiques. Score audit, incidents ouverts, actions en retard — avec alertes IA en temps réel.</p>
+      <ul class="cklist" data-d="3" style="margin-top:20px">
+        <li><span class="ck">✓</span>Vue groupe tous sites simultanément</li>
+        <li><span class="ck">✓</span>Alertes IA automatiques sur les dérives</li>
+        <li><span class="ck">✓</span>Export reporting direction en 1 clic</li>
+        <li><span class="ck">✓</span>Badge CRITIQUE visible immédiatement</li>
+      </ul>
+    </div>
+    <div class="ss-img r-right">
+      <div class="img-glow"></div>
+      <div class="img-wrap">
+        <img src="cockpit-dashboard-2.png" loading="lazy" alt="Cockpit QHSE">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOT 2 — Analyses -->
+<section class="ss alt">
+  <div class="wrap rev">
+    <div class="ss-img r-left">
+      <div class="img-glow"></div>
+      <div class="img-wrap">
+        <img src="analyses-synthese.png" loading="lazy" alt="Analyses Synthèse QHSE">
+      </div>
+    </div>
+    <div class="ss-txt r-right">
+      <div class="ew">Analyses & Synthèse</div>
+      <h2 data-d="1">Pilotez par les<br><span class="t">données, pas les</span><br>impressions.</h2>
+      <p class="lead" data-d="2">Dashboard complet pour optimiser incidents, actions et conformités. L'IA analyse les tendances et génère des alertes proactives.</p>
+      <div class="prog-bar" data-d="3">
+        <div class="prog-item">
+          <div class="prog-label"><span>Conformité NC</span><span>43%</span></div>
+          <div class="prog-track"><div class="prog-fill" data-w="43"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Score audits</span><span>59.9%</span></div>
+          <div class="prog-track"><div class="prog-fill" data-w="60"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Actions clôturées</span><span>72%</span></div>
+          <div class="prog-track"><div class="prog-fill" data-w="72"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOT 3 — Performance -->
+<section class="ss">
+  <div class="wrap">
+    <div class="ss-txt r-left">
+      <div class="ew">Performance QHSE</div>
+      <h2 data-d="1">Des indicateurs<br>qui <span class="t">parlent à</span><br>votre direction.</h2>
+      <p class="lead" data-d="2">Indice de maîtrise QHSE, niveau de vigilance, KPIs globaux — un tableau de bord pensé pour les décideurs, pas seulement pour les techniciens.</p>
+      <ul class="cklist" data-d="3" style="margin-top:20px">
+        <li><span class="ck">✓</span>Indice de maîtrise QHSE global</li>
+        <li><span class="ck">✓</span>Niveau de vigilance automatique</li>
+        <li><span class="ck">✓</span>Taux de traitement NC en temps réel</li>
+        <li><span class="ck">✓</span>Respect des échéances mesuré</li>
+      </ul>
+    </div>
+    <div class="ss-img r-right">
+      <div class="img-glow"></div>
+      <div class="img-wrap">
+        <img src="performance-qhse.png" loading="lazy" alt="Performance QHSE">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOT 4 — Risques -->
+<section class="ss alt">
+  <div class="wrap rev">
+    <div class="ss-img r-left">
+      <div class="img-glow"></div>
+      <div class="img-wrap">
+        <img src="cockpit-dashboard-2.png" loading="lazy" alt="Gestion des risques — Matrice criticité">
+      </div>
+    </div>
+    <div class="ss-txt r-right">
+      <div class="ew">Gestion des risques</div>
+      <h2 data-d="1">Visualisez chaque<br><span class="t">risque</span> sur la<br>matrice.</h2>
+      <p class="lead" data-d="2">Pilotage par criticité avec matrice Gravité×Probabilité. Chaque case cliquable ouvre la liste des fiches. Priorisation instantanée des risques critiques.</p>
+      <ul class="cklist" data-d="3" style="margin-top:20px">
+        <li><span class="ck">✓</span>Matrice G×P interactive et cliquable</li>
+        <li><span class="ck">✓</span>Compteurs par niveau de criticité</li>
+        <li><span class="ck">✓</span>Raccourcis cases avec fiches liées</li>
+        <li><span class="ck">✓</span>11 fiches visibles sur la grille</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- TÉMOIGNAGES -->
+<section class="testi" id="temoignages">
+  <div class="wrap">
+    <div class="testi-head">
+      <div class="ew r" style="justify-content:center">Témoignages</div>
+      <h2 class="r" data-d="1">Ce qu'en disent<br><span class="t">nos clients.</span></h2>
+      <p class="lead r" data-d="2">Des responsables QHSE qui ont transformé leur pilotage avec QHSE Control.</p>
+    </div>
+
+    <div class="testi-grid">
+
+      <!-- Card 1 — Featured (dark) -->
+      <div class="testi-card feat r" data-d="1">
+        <div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-tag" style="margin-top:10px">⛏ Mines & Or</div>
+        </div>
+        <div class="testi-quote">
+          Avant QHSE Control, chaque rapport d'audit me prenait une demi-journée. Maintenant c'est 30 secondes. L'IA identifie des causes que j'aurais manquées — et en français, ce qui change tout pour nos équipes terrain.
+        </div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--teal)">AK</div>
+          <div>
+            <div class="testi-name">Amadou Konaté</div>
+            <div class="testi-role">Directeur QHSE · Katiola Mining, Côte d'Ivoire</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testi-card r" data-d="2">
+        <div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-tag" style="margin-top:10px">🏗 BTP</div>
+        </div>
+        <div class="testi-quote">
+          Le mode offline est un game-changer pour nous. Nos chefs de chantier déclarent les incidents depuis le terrain sans réseau. Tout se synchronise au retour au bureau. On a réduit les délais de déclaration de 3 jours à 2 heures.
+        </div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#7c3aed">FN</div>
+          <div>
+            <div class="testi-name">Fary Ndaw</div>
+            <div class="testi-role">Directeur · F Consulting, Sénégal</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="testi-card r" data-d="3">
+        <div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-tag" style="margin-top:10px">🛢 Pétrochimie</div>
+        </div>
+        <div class="testi-quote">
+          Notre audit ISO 45001 annuel s'est passé sans stress pour la première fois. Le score de conformité en temps réel nous a permis de corriger les points faibles 3 mois avant l'audit externe. Résultat : 94% de conformité.
+        </div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#0284c7">IB</div>
+          <div>
+            <div class="testi-name">Ibrahim Bah</div>
+            <div class="testi-role">Responsable HSE · PétroWest, Guinée</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="testi-card r" data-d="1">
+        <div>
+          <div class="testi-stars">★★★★☆</div>
+          <div class="testi-tag" style="margin-top:10px">⚡ Énergie</div>
+        </div>
+        <div class="testi-quote">
+          Les alertes automatiques d'expiration d'habilitations nous ont sauvé d'une non-conformité majeure. Le système a détecté 4 habilitations électriques expirées 3 semaines avant l'échéance.
+        </div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#c47a00">MS</div>
+          <div>
+            <div class="testi-name">Moussa Sidibé</div>
+            <div class="testi-role">Ingénieur QHSE · EnergieMali, Mali</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="testi-card r" data-d="2">
+        <div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-tag" style="margin-top:10px">🌱 Agroalimentaire</div>
+        </div>
+        <div class="testi-quote">
+          L'interface est tellement intuitive que nos opérateurs terrain l'ont adopté sans formation. En 2 semaines, 100% de l'équipe utilisait l'application. C'est rare pour un outil QHSE.
+        </div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#059669">AO</div>
+          <div>
+            <div class="testi-name">Awa Ouédraogo</div>
+            <div class="testi-role">DRH & QHSE · AgroFaso, Burkina Faso</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="testi-card r" data-d="3">
+        <div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-tag" style="margin-top:10px">🚢 Logistique</div>
+        </div>
+        <div class="testi-quote">
+          Le rapport de démo était tellement proche de notre réalité terrain que notre direction a validé le budget en 48h. Onboarding en 3 jours. Support réactif, toujours en français.
+        </div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#dc2626">NC</div>
+          <div>
+            <div class="testi-name">Nadia Coulibaly</div>
+            <div class="testi-role">Chef de projet QHSE · PortLogistics CI, Abidjan</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Trust bar -->
+    <div class="testi-trust r" data-d="4">
+      <div class="trust-item">
+        <div class="trust-val">6</div>
+        <div class="trust-lbl">Pays couverts</div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <div class="trust-val">94%</div>
+        <div class="trust-lbl">Satisfaction client</div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <div class="trust-val">&lt;48h</div>
+        <div class="trust-lbl">Délai d'onboarding</div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <div class="trust-val">100%</div>
+        <div class="trust-lbl">En français</div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <div class="trust-val">30s</div>
+        <div class="trust-lbl">Rapport d'audit</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+  <div class="wrap">
+    <div class="comp-head">
+      <div class="ew r" style="justify-content:center">Comparaison</div>
+      <h2 class="r" data-d="1">Avec ou sans <span class="t">outil dédié</span></h2>
+      <p class="lead r" data-d="2">Ce que ça change concrètement sur le terrain.</p>
+    </div>
+    <div class="comp-table r" data-d="2">
+      <div class="comp-row comp-head-row">
+        <div class="cc">Critère</div><div class="cc">Sans outil dédié</div><div class="cc">QHSE Control</div>
+      </div>
+      <div class="comp-row"><div class="cc">Déclaration d'incident</div><div class="cc">15 à 30 minutes</div><div class="cc hl">90 secondes</div></div>
+      <div class="comp-row"><div class="cc">Rapport d'audit complet</div><div class="cc">2 à 4 heures</div><div class="cc hl">30 secondes</div></div>
+      <div class="comp-row"><div class="cc">Alertes habilitations expirées</div><div class="cc"><span class="no">✕</span></div><div class="cc"><span class="yes">✓</span></div></div>
+      <div class="comp-row"><div class="cc">Mode terrain sans réseau</div><div class="cc"><span class="no">✕</span></div><div class="cc"><span class="yes">✓</span></div></div>
+      <div class="comp-row"><div class="cc">Analyse IA des causes</div><div class="cc"><span class="no">✕</span></div><div class="cc"><span class="yes">✓</span></div></div>
+      <div class="comp-row"><div class="cc">Conformité ISO temps réel</div><div class="cc"><span class="no">✕</span></div><div class="cc"><span class="yes">✓</span></div></div>
+      <div class="comp-row"><div class="cc">Interface 100% en français</div><div class="cc"><span class="yes">✓</span></div><div class="cc hl">✓ Conçu pour l'Afrique</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="tarifs">
+  <div class="wrap">
+    <div class="p-head">
+      <div class="ew r" style="justify-content:center">Tarifs</div>
+      <h2 class="r" data-d="1">Un devis <span class="t">personnalisé</span><br>pour votre site.</h2>
+      <p class="lead r" data-d="2">Chaque site est différent. Nous construisons une proposition adaptée à votre secteur, votre organisation et vos besoins réels.</p>
+    </div>
+
+    <!-- 3 pillars -->
+    <div class="p-pillars r" data-d="2">
+      <div class="pillar">
+        <div class="pillar-icon">⚡</div>
+        <div class="pillar-title">Setup & déploiement</div>
+        <div class="pillar-desc">Paramétrage, import de vos données, seed métier sectoriel, formation équipes, accompagnement 30 jours. Tout inclus dans un forfait unique.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📅</div>
+        <div class="pillar-title">Abonnement mensuel</div>
+        <div class="pillar-desc">Accès à la plateforme, mises à jour, support. Trois niveaux selon le nombre de sites et les modules souhaités — Standard, Avancé ou Premium.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📊</div>
+        <div class="pillar-title">Retour sur investissement</div>
+        <div class="pillar-desc">Une journée d'arrêt de production évitée couvre l'abonnement annuel. Le ROI est mesurable dès le premier mois de déploiement.</div>
+      </div>
+    </div>
+
+    <!-- What's included -->
+    <div class="incl-grid r" data-d="3">
+      <div class="incl-col">
+        <div class="incl-title">Inclus dans tous les plans</div>
+        <ul class="incl-list">
+          <li>Dashboard QHSE en temps réel</li>
+          <li>Gestion des incidents</li>
+          <li>Gestion des risques</li>
+          <li>Audits & non-conformités ISO</li>
+          <li>Plans d'actions</li>
+          <li>Interface 100% en français</li>
+          <li>Support dédié</li>
+        </ul>
+      </div>
+      <div class="incl-col">
+        <div class="incl-title">Selon votre plan</div>
+        <ul class="incl-list">
+          <li>Habilitations & Permis de travail</li>
+          <li>Documents contrôlés (GED)</li>
+          <li>Mode terrain offline</li>
+          <li>Multi-sites jusqu'à illimité</li>
+          <li>IA avancée — analyse causale</li>
+          <li>Reporting consolidé direction</li>
+          <li>Account manager dédié</li>
+        </ul>
+      </div>
+      <div class="incl-cta">
+        <div class="incl-cta-title">Obtenez votre devis en 24h</div>
+        <div class="incl-cta-sub">Remplissez le formulaire ci-dessous. Nous revenons vers vous avec une proposition adaptée à votre situation.</div>
+        <button class="btn-primary" style="margin-top:20px;width:100%;justify-content:center" onclick="scrollRDV()">Demander mon devis →</button>
+      </div>
+    </div>
+
+    <!-- RDV -->
+    <div class="rdv-wrap r" data-d="2" id="rdv">
+      <div class="rdv-top">
+        <div class="rdv-title">Demandez votre démo & devis — 20 minutes</div>
+        <div class="rdv-sub">Remplissez ce formulaire. Nous vous contactons sous 24h pour fixer un créneau, vous présenter la plateforme et vous envoyer un devis personnalisé.</div>
+      </div>
+      <div class="rdv-body">
+        <div class="rdv-grid">
+          <div class="rg"><label class="rl">Nom complet *</label><input class="ri" id="rn" type="text" placeholder="Votre nom"></div>
+          <div class="rg"><label class="rl">Entreprise *</label><input class="ri" id="re" type="text" placeholder="Votre entreprise"></div>
+          <div class="rg"><label class="rl">Email professionnel *</label><input class="ri" id="rem" type="email" placeholder="votre@email.pro"></div>
+          <div class="rg"><label class="rl">Téléphone / WhatsApp *</label><input class="ri" id="rt" type="tel" placeholder="+225 / +221 / +226..."></div>
+          <div class="rg"><label class="rl">Secteur d'activité *</label>
+            <select class="ri" id="rs">
+              <option value="">— Votre secteur —</option>
+              <option>Mines & extraction</option><option>BTP & grands travaux</option>
+              <option>Pétrochimie & énergie</option><option>Agroalimentaire</option>
+              <option>Logistique & transport</option><option>Autre industrie</option>
+            </select>
+          </div>
+          <div class="rg"><label class="rl">Nombre de sites</label>
+            <select class="ri" id="rsi">
+              <option value="">— Nombre de sites —</option>
+              <option>1 site</option><option>2 à 3 sites</option><option>4 à 10 sites</option><option>Plus de 10 sites</option>
+            </select>
+          </div>
+        </div>
+        <div class="rg" style="margin-top:14px">
+          <label class="rl">Votre principal défi QHSE (optionnel)</label>
+          <textarea class="ri" id="rm" placeholder="Ex: Suivi des habilitations, préparation certification ISO, gestion des incidents..."></textarea>
+        </div>
+        <button class="rdv-btn" id="rdvbtn" onclick="submitRDV()">Demander ma démo & mon devis →</button>
+        <div class="rdv-note">Aucun engagement · Réponse sous 24h · Devis personnalisé inclus</div>
+        <div class="rdv-ok" id="rdvok">✓ Demande envoyée — nous vous contactons sous 24h.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <div class="ew r" style="justify-content:center">FAQ</div>
+      <h2 class="r" data-d="1">Questions<br><span class="t">frequentes.</span></h2>
+      <p class="lead r" data-d="2">Tout ce que vous voulez savoir avant de vous lancer.</p>
+    </div>
+
+    <div class="faq-inner">
+      <div class="faq-cats">
+        <button class="faq-cat fon" onclick="faqFilter('all',this)">Toutes</button>
+        <button class="faq-cat" onclick="faqFilter('produit',this)">Produit</button>
+        <button class="faq-cat" onclick="faqFilter('technique',this)">Technique</button>
+        <button class="faq-cat" onclick="faqFilter('securite',this)">Securite &amp; donnees</button>
+        <button class="faq-cat" onclick="faqFilter('tarifs',this)">Tarifs</button>
+      </div>
+
+      <div class="faq-list" id="faqList">
+
+        <div class="faq-item" data-fcat="produit">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">L'application fonctionne-t-elle vraiment sans connexion internet ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p><strong>Oui, completement.</strong> L'app mobile est concue pour fonctionner en mode offline natif. Vos equipes terrain peuvent declarer des incidents, conduire des audits et gerer des permis de travail sans aucune connexion.</p>
+            <p>Tout est stocke localement et synchronise automatiquement des qu'une connexion est disponible. Ideal pour les mines, chantiers isoles ou zones a faible couverture reseau.</p>
+            <div class="faq-atag">Offline natif iOS &amp; Android</div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-fcat="produit">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">Est-ce que l'IA remplace le jugement du responsable QHSE ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p><strong>Non, et c'est un choix delibere.</strong> L'IA est concue comme un assistant, pas comme un decideur. Elle analyse les causes et suggere des actions correctives — mais chaque decision doit etre validee par un humain.</p>
+            <p>Vous gardez le controle total. L'IA accelere votre travail, elle ne le remplace pas.</p>
+            <div class="faq-atag">Validation humaine obligatoire</div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-fcat="produit">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">Quels referentiels ISO sont pris en charge ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p>QHSE Control couvre nativement <strong>ISO 45001</strong> (sante et securite), <strong>ISO 14001</strong> (management environnemental) et <strong>ISO 9001</strong> (management de la qualite).</p>
+            <p>Les checklists, criteres de conformite et actions correctives sont pre-configures pour chaque norme. Vous pouvez egalement ajouter vos propres criteres specifiques.</p>
+            <div class="faq-atag">ISO 45001 &middot; 14001 &middot; 9001</div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-fcat="produit">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">Combien de temps prend l'onboarding ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p><strong>Moins de 48 heures.</strong> Jour 1 matin : configuration des sites et des roles. Jour 1 apres-midi : invitation de l'equipe. Jour 2 : premiere declaration en conditions reelles.</p>
+            <p>Notre equipe vous accompagne par WhatsApp tout au long du processus, en francais.</p>
+            <div class="faq-atag">Moins de 48h</div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-fcat="technique">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">Faut-il installer quelque chose sur nos serveurs ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p><strong>Non, zero installation.</strong> QHSE Control est un SaaS 100% cloud. Vous accedez a la plateforme depuis n'importe quel navigateur, et l'app mobile se telecharge sur les stores.</p>
+            <p>Aucune infrastructure IT requise. Pas de serveur, pas de maintenance, pas de mises a jour manuelles.</p>
+            <div class="faq-atag">100% cloud</div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-fcat="technique">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">Peut-on integrer QHSE Control avec nos outils existants ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p>Oui. QHSE Control dispose d'une API REST pour l'integration avec vos outils RH, ERP ou GMAO. Les exports sont disponibles en <strong>PDF, Excel et CSV</strong>.</p>
+            <p>Des connecteurs natifs pour les outils courants en Afrique de l'Ouest sont en cours de developpement. Contactez-nous pour votre cas specifique.</p>
+            <div class="faq-atag">API REST disponible</div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-fcat="securite">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">Ou sont stockees nos donnees ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p>Vos donnees sont hebergees sur des serveurs securises avec <strong>chiffrement AES-256</strong> au repos et TLS 1.3 en transit. Sauvegardes quotidiennes incluses.</p>
+            <p>Vous restez proprietaire de vos donnees a tout moment et pouvez les exporter ou les supprimer sur demande.</p>
+            <div class="faq-atag">Chiffrement AES-256 &middot; RGPD</div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-fcat="securite">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">Qui peut voir les donnees de notre entreprise ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p><strong>Uniquement les personnes que vous autorisez.</strong> Chaque compte est isole dans un environnement dedie. Le systeme de roles vous permet de controler precisement qui peut voir, modifier ou exporter chaque donnee.</p>
+            <p>L'equipe QHSE Control n'accede a vos donnees que sur demande explicite, uniquement pour le support technique.</p>
+            <div class="faq-atag">Controle des acces par role</div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-fcat="tarifs">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">Y a-t-il une periode d'essai gratuite ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p><strong>Oui, 14 jours d'essai gratuit</strong> sans carte bancaire. Acces a toutes les fonctionnalites du plan choisi pendant cette periode.</p>
+            <p>Nous proposons egalement une demo personnalisee de 20 minutes avec un expert QHSE, adaptee a votre secteur.</p>
+            <div class="faq-atag">14 jours gratuits &middot; Sans CB</div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-fcat="tarifs">
+          <div class="faq-q" onclick="faqToggle(this)">
+            <span class="faq-q-text">Les prix sont-ils en FCFA ou en euros ?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p>Les tarifs sont affiches en <strong>FCFA et en euros</strong>. Paiement accepte par virement bancaire, Mobile Money (Orange Money, Wave, MTN) et carte bancaire internationale.</p>
+            <p>Des tarifs speciaux sont disponibles pour les organisations publiques, ONG et groupes multi-sites.</p>
+            <div class="faq-atag">Mobile Money accepte</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="faq-cta-box">
+        <div>
+          <div class="faq-cta-t">Vous avez d'autres questions ?</div>
+          <div class="faq-cta-s">Notre equipe repond en moins de 2h, en francais, par WhatsApp ou email.</div>
+        </div>
+        <a href="#rdv" class="btn-primary">Parler a un expert &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <canvas id="ctaCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.6;max-width:100%"></canvas>
+  <div class="cta-badge r"><span class="cta-badge-dot"></span>Afrique de l'Ouest · CI · SN · BF · ML · GN</div>
+  <h2 class="r" style="font-size:clamp(38px,4.5vw,60px);margin-bottom:10px">Parlons de<br><span class="g">votre projet.</span></h2>
+  <p class="lead r" data-d="1" style="font-size:16px">20 minutes. Votre contexte réel. Un devis sous 24h.</p>
+  <div class="cta-btns r" data-d="2" style="margin-bottom:20px">
+    <a href="#rdv" class="btn-w" onclick="scrollRDV();return false;" style="font-size:16px;padding:16px 36px">Réserver ma démo →</a>
+    <a href="mailto:qhsecontrol@outlook.com" class="btn-wo">✉ Email</a>
+    <a href="https://wa.me/33641554518" target="_blank" class="btn-wo" style="background:rgba(37,211,102,.15);border-color:rgba(37,211,102,.4);color:#25d366">💬 WhatsApp</a>
+    <a href="https://wa.me/32471974730" target="_blank" class="btn-wo" style="background:rgba(37,211,102,.15);border-color:rgba(37,211,102,.4);color:#25d366">💬 WhatsApp</a>
+  </div>
+  <div class="cta-meta r" data-d="3" style="margin-bottom:0">
+    <a href="mailto:qhsecontrol@outlook.com">qhsecontrol@outlook.com</a> ·
+    <a href="https://wa.me/33641554518">+33 6 41 55 45 18</a> ·
+    <a href="https://wa.me/32471974730">+32 471 97 47 30</a>
+  </div>
+  <div class="cta-stats r" data-d="4">
+    <div class="cta-stat">
+      <div class="cta-stat-val cta-count" data-to="90">0</div>
+      <div class="cta-stat-unit">secondes</div>
+      <div class="cta-stat-lbl">pour déclarer un incident</div>
+    </div>
+    <div class="cta-stat-sep"></div>
+    <div class="cta-stat">
+      <div class="cta-stat-val cta-count" data-to="30">0</div>
+      <div class="cta-stat-unit">secondes</div>
+      <div class="cta-stat-lbl">pour générer un rapport ISO</div>
+    </div>
+    <div class="cta-stat-sep"></div>
+    <div class="cta-stat">
+      <div class="cta-stat-val">100%</div>
+      <div class="cta-stat-unit">&nbsp;</div>
+      <div class="cta-stat-lbl">interface en français</div>
+    </div>
+    <div class="cta-stat-sep"></div>
+    <div class="cta-stat">
+      <div class="cta-stat-val">&lt;2</div>
+      <div class="cta-stat-unit">semaines</div>
+      <div class="cta-stat-lbl">pour être opérationnel</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <!-- Brand col -->
+    <div class="ft-brand">
+      <div class="ft-brand-row">
+        <div class="brand-icon">✓</div>
+        <span class="ft-name">QHSE Control</span>
+      </div>
+      <p class="ft-tagline">La plateforme QHSE pensée pour les industries d'Afrique de l'Ouest. En français, offline, IA intégrée.</p>
+      <div class="ft-socials">
+        <a href="mailto:contact@qhsecontrol.africa" class="ft-social" title="Email">✉</a>
+        <a href="https://wa.me/33641554518" target="_blank" class="ft-social" title="WhatsApp">💬</a>
+        <a href="https://linkedin.com" target="_blank" class="ft-social" title="LinkedIn">in</a>
+      </div>
+    </div>
+    <!-- Produit -->
+    <div>
+      <div class="ft-col-title">Produit</div>
+      <div class="ft-links">
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#plateforme">Plateforme</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#rdv">Demander une démo</a>
+      </div>
+    </div>
+    <!-- Secteurs -->
+    <div>
+      <div class="ft-col-title">Secteurs</div>
+      <div class="ft-links">
+        <a href="#probleme">Mines & Or</a>
+        <a href="#probleme">BTP & Génie civil</a>
+        <a href="#probleme">Pétrochimie</a>
+        <a href="#probleme">Énergie & Utilities</a>
+        <a href="#probleme">Agroalimentaire</a>
+      </div>
+    </div>
+    <!-- Contact -->
+    <div>
+      <div class="ft-col-title">Contact</div>
+      <div class="ft-links">
+        <a href="mailto:contact@qhsecontrol.africa">contact@qhsecontrol.africa</a>
+        <a href="https://wa.me/33641554518" target="_blank">WhatsApp</a>
+        <a href="#rdv">Réserver une démo</a>
+        <a href="#contact">À propos</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 QHSE Control · Afrique de l'Ouest</span>
+    <div class="ft-iso">
+      <span class="ft-iso-badge">ISO 45001</span>
+      <span class="ft-iso-badge">ISO 14001</span>
+      <span class="ft-iso-badge">ISO 9001</span>
+      <span class="ft-iso-badge">RGPD</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV
+const nav = document.getElementById("nav");
+window.addEventListener("scroll", () => {
+  nav.style.background = window.scrollY > 40 ? "rgba(244,247,251,.98)" : "rgba(244,247,251,.94)";
+  nav.style.boxShadow = window.scrollY > 40 ? "0 2px 12px rgba(0,0,0,.08)" : "none";
+});
+
+// REVEAL
+const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add("v"); }), {threshold:.08});
+document.querySelectorAll(".r,.r-left,.r-right").forEach(el => io.observe(el));
+
+// PROGRESS BARS
+const pIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll(".prog-fill").forEach(bar => {
+        bar.style.width = bar.dataset.w + "%";
+      });
+      pIO.unobserve(e.target);
+    }
+  });
+}, {threshold: .3});
+document.querySelectorAll(".prog-bar").forEach(el => pIO.observe(el));
+
+// COUNTERS
+const cIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const to = parseInt(el.dataset.to);
+      let start = null;
+      const step = ts => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / 1000, 1);
+        el.textContent = Math.round((1 - Math.pow(1-p,3)) * to);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+      cIO.unobserve(el);
+    }
+  });
+}, {threshold:.5});
+document.querySelectorAll(".count").forEach(el => cIO.observe(el));
+
+// SCROLL TO RDV
+function scrollRDV() {
+  document.getElementById("rdv").scrollIntoView({behavior:"smooth",block:"start"});
+  setTimeout(() => document.getElementById("rn").focus(), 600);
+}
+
+
+
+// -- PARALLAX on screenshots ----------------------------------
+document.querySelectorAll(".img-wrap").forEach(el => {
+  const section = el.closest("section");
+  window.addEventListener("scroll", () => {
+    const rect = section.getBoundingClientRect();
+    const progress = -rect.top / (window.innerHeight + rect.height);
+    const shift = (progress - .3) * 18;
+    el.style.transform = `translateY(${shift}px)`;
+  }, {passive: true});
+});
+
+// -- STAGGER feat cards on reveal -----------------------------
+const featGrid = document.querySelector(".feat-grid");
+if (featGrid) {
+  const featIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll(".feat-card").forEach((card, i) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          setTimeout(() => {
+            card.style.transition = "opacity .5s, transform .5s";
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }, i * 80);
+        });
+        featIO.unobserve(e.target);
+      }
+    });
+  }, {threshold: .1});
+  featIO.observe(featGrid);
+}
+
+// -- HERO CANVAS -- Particles + Radar --------------------------
+const canvas = document.getElementById("heroCanvas");
+const ctx = canvas.getContext("2d");
+let W, H, mouse = {x: -999, y: -999};
+const TEAL = "0,153,122";
+const TEAL2 = "0,192,154";
+
+function resize() {
+  W = canvas.width = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+document.querySelector(".hero").addEventListener("mousemove", e => {
+  const rect = canvas.getBoundingClientRect();
+  mouse.x = e.clientX - rect.left;
+  mouse.y = e.clientY - rect.top;
+});
+document.querySelector(".hero").addEventListener("mouseleave", () => {
+  mouse.x = W / 2; mouse.y = H / 2;
+});
+
+// Particles
+const PARTICLE_COUNT = 55;
+const particles = Array.from({length: PARTICLE_COUNT}, () => ({
+  x: Math.random() * 1000,
+  y: Math.random() * 800,
+  vx: (Math.random() - .5) * .4,
+  vy: (Math.random() - .5) * .4,
+  r: Math.random() * 2.5 + 1,
+  opacity: Math.random() * .5 + .2
+}));
+
+// Radar
+let radarAngle = 0;
+let radarPulses = [];
+
+function addPulse() {
+  radarPulses.push({ r: 0, opacity: .5 });
+}
+setInterval(addPulse, 2000);
+addPulse();
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+
+  // Update particles
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+
+    // Mouse attraction -- subtle
+    const dx = mouse.x - p.x;
+    const dy = mouse.y - p.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < 180) {
+      p.vx += dx / dist * .015;
+      p.vy += dy / dist * .015;
+    }
+
+    // Speed limit
+    const speed = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
+    if (speed > .9) { p.vx *= .9 / speed; p.vy *= .9 / speed; }
+
+    // Wrap
+    if (p.x < -20) p.x = W + 20;
+    if (p.x > W + 20) p.x = -20;
+    if (p.y < -20) p.y = H + 20;
+    if (p.y > H + 20) p.y = -20;
+  });
+
+  // Draw connections
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const d = Math.sqrt(dx*dx + dy*dy);
+      if (d < 130) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(${TEAL},${(1 - d/130) * .18})`;
+        ctx.lineWidth = .8;
+        ctx.stroke();
+      }
+    }
+  }
+
+  // Draw particles
+  particles.forEach(p => {
+    const dx = mouse.x - p.x;
+    const dy = mouse.y - p.y;
+    const d = Math.sqrt(dx*dx + dy*dy);
+    const glow = d < 120 ? 1 - d/120 : 0;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r + glow * 1.5, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${TEAL2},${p.opacity + glow * .3})`;
+    ctx.fill();
+  });
+
+  // Radar -- centered in hero
+  const cx = W * .72, cy = H * .42, maxR = Math.min(W, H) * .22;
+
+  // Radar pulses
+  radarPulses = radarPulses.filter(p => p.opacity > .01);
+  radarPulses.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(cx, cy, p.r, 0, Math.PI * 2);
+    ctx.strokeStyle = `rgba(${TEAL},${p.opacity})`;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    p.r += 1.2;
+    p.opacity *= .975;
+  });
+
+  // Radar circles
+  [.33, .66, 1].forEach((scale, i) => {
+    ctx.beginPath();
+    ctx.arc(cx, cy, maxR * scale, 0, Math.PI * 2);
+    ctx.strokeStyle = `rgba(${TEAL},${.08 - i * .02})`;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  });
+
+  // Radar sweep
+  radarAngle += .012;
+  const grad = ctx.createConicalGradient ? null : null;
+  // Manual sweep with arc
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.rotate(radarAngle);
+  const sweep = ctx.createLinearGradient(0, 0, maxR, 0);
+  sweep.addColorStop(0, `rgba(${TEAL2},.0)`);
+  sweep.addColorStop(.6, `rgba(${TEAL2},.12)`);
+  sweep.addColorStop(1, `rgba(${TEAL2},.25)`);
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.arc(0, 0, maxR, -0.6, 0);
+  ctx.closePath();
+  ctx.fillStyle = sweep;
+  ctx.fill();
+
+  // Radar line
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(maxR, 0);
+  ctx.strokeStyle = `rgba(${TEAL2},.5)`;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.restore();
+
+  // Center dot
+  ctx.beginPath();
+  ctx.arc(cx, cy, 3, 0, Math.PI * 2);
+  ctx.fillStyle = `rgba(${TEAL2},.6)`;
+  ctx.fill();
+
+  // Crosshairs
+  ctx.save();
+  ctx.strokeStyle = `rgba(${TEAL},.08)`;
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4, 8]);
+  ctx.beginPath(); ctx.moveTo(cx - maxR, cy); ctx.lineTo(cx + maxR, cy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx, cy - maxR); ctx.lineTo(cx, cy + maxR); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.restore();
+
+  // Mouse glow
+  if (mouse.x > 0 && mouse.y > 0) {
+    const mg = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 100);
+    mg.addColorStop(0, `rgba(${TEAL2},.08)`);
+    mg.addColorStop(1, `rgba(${TEAL2},0)`);
+    ctx.beginPath();
+    ctx.arc(mouse.x, mouse.y, 100, 0, Math.PI * 2);
+    ctx.fillStyle = mg;
+    ctx.fill();
+  }
+
+  requestAnimationFrame(draw);
+}
+draw();
+// Set initial mouse to center
+mouse.x = W / 2; mouse.y = H / 2;
+
+
+// -- CTA CANVAS -- energy particles ----------------------------
+const ctaCanvas = document.getElementById("ctaCanvas");
+if (ctaCanvas) {
+  const cc = ctaCanvas.getContext("2d");
+  let cW, cH;
+  function resizeCta() {
+    cW = ctaCanvas.width = ctaCanvas.offsetWidth;
+    cH = ctaCanvas.height = ctaCanvas.offsetHeight;
+  }
+  resizeCta();
+  window.addEventListener("resize", resizeCta);
+
+  // Energy particles - faster, more dynamic
+  const EP = Array.from({length: 70}, () => ({
+    x: Math.random() * 1200, y: Math.random() * 500,
+    vx: (Math.random() - .5) * 1.2,
+    vy: (Math.random() - .5) * 1.2,
+    r: Math.random() * 2 + .5,
+    life: Math.random(),
+    maxLife: .4 + Math.random() * .6,
+    type: Math.random() > .7 ? "cross" : "dot"
+  }));
+
+  // Shooting lines
+  const lines = Array.from({length: 6}, () => ({
+    x: Math.random() * 1200, y: Math.random() * 500,
+    vx: (Math.random() > .5 ? 1 : -1) * (1.5 + Math.random() * 2),
+    vy: (Math.random() - .5) * .5,
+    len: 40 + Math.random() * 60,
+    opacity: Math.random() * .4 + .1
+  }));
+
+  function drawCta() {
+    cc.clearRect(0, 0, cW, cH);
+
+    // Draw shooting lines
+    lines.forEach(l => {
+      cc.beginPath();
+      cc.moveTo(l.x, l.y);
+      cc.lineTo(l.x - l.vx * l.len / 2, l.y - l.vy * l.len / 2);
+      const grad = cc.createLinearGradient(l.x, l.y, l.x - l.vx * l.len/2, l.y);
+      grad.addColorStop(0, `rgba(255,255,255,${l.opacity})`);
+      grad.addColorStop(1, "rgba(255,255,255,0)");
+      cc.strokeStyle = grad;
+      cc.lineWidth = 1.2;
+      cc.stroke();
+
+      l.x += l.vx;
+      l.y += l.vy;
+      if (l.x < -100 || l.x > cW + 100) {
+        l.x = l.vx > 0 ? -50 : cW + 50;
+        l.y = Math.random() * cH;
+      }
+    });
+
+    // Draw particles
+    EP.forEach(p => {
+      p.life += .008;
+      if (p.life > p.maxLife) {
+        p.x = Math.random() * cW;
+        p.y = Math.random() * cH;
+        p.life = 0;
+        p.vx = (Math.random() - .5) * 1.2;
+        p.vy = (Math.random() - .5) * 1.2;
+      }
+      const fade = Math.sin(p.life / p.maxLife * Math.PI);
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.type === "cross") {
+        cc.save();
+        cc.translate(p.x, p.y);
+        cc.rotate(p.life * 2);
+        cc.strokeStyle = `rgba(200,255,240,${fade * .35})`;
+        cc.lineWidth = 1;
+        cc.beginPath(); cc.moveTo(-4,0); cc.lineTo(4,0); cc.stroke();
+        cc.beginPath(); cc.moveTo(0,-4); cc.lineTo(0,4); cc.stroke();
+        cc.restore();
+      } else {
+        cc.beginPath();
+        cc.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        cc.fillStyle = `rgba(200,255,240,${fade * .45})`;
+        cc.fill();
+      }
+    });
+
+    requestAnimationFrame(drawCta);
+  }
+  drawCta();
+}
+
+// CTA counter animation
+const ctaCountIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll(".cta-count").forEach(el => {
+        const to = parseInt(el.dataset.to);
+        let start = null;
+        const step = ts => {
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / 1200, 1);
+          el.textContent = Math.round((1 - Math.pow(1-p,3)) * to);
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+      ctaCountIO.unobserve(e.target);
+    }
+  });
+}, {threshold:.3});
+const ctaSection = document.querySelector(".cta");
+if (ctaSection) ctaCountIO.observe(ctaSection);
+
+// SUBMIT
+function submitRDV() {
+  const n = document.getElementById("rn").value.trim();
+  const e = document.getElementById("re").value.trim();
+  const em = document.getElementById("rem").value.trim();
+  const t = document.getElementById("rt").value.trim();
+  const s = document.getElementById("rs").value;
+  const si = document.getElementById("rsi").value;
+  const m = document.getElementById("rm").value.trim();
+  const fields = [{id:"rn",v:n},{id:"re",v:e},{id:"rem",v:em},{id:"rt",v:t},{id:"rs",v:s}];
+  let ok = true;
+  fields.forEach(f => {
+    const el = document.getElementById(f.id);
+    if (!f.v) { el.style.borderColor = "var(--red)"; ok = false; }
+    else el.style.borderColor = "";
+  });
+  if (!ok) return;
+  const subj = encodeURIComponent(`Demande de d\u00E9mo QHSE Control -- ${e}`);
+  const body = encodeURIComponent(`Bonjour,\n\nDemande de d\u00E9mo 20 min pour QHSE Control.\n\nNom : ${n}\nEntreprise : ${e}\nEmail : ${em}\nT\u00E9l/WhatsApp : ${t}\nSecteur : ${s}\nSites : ${si||"--"}\n\nD\u00E9fi QHSE :\n${m||"--"}\n\nEnvoy\u00E9 depuis qhsecontrol.africa`);
+  // Option A: mailto fallback (current)
+  window.location.href = `mailto:contact@qhsecontrol.africa?subject=${subj}&body=${body}`;
+  
+  // Option B (recommand?): remplacer par fetch vers Formspree quand domaine actif
+  // fetch("https://formspree.io/f/VOTRE_ID", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({name:n,company:e,email:em,phone:t,sector:s,sites:si,message:m})})
+  
+  document.getElementById("rdvok").style.display = "block";
+  const btn = document.getElementById("rdvbtn");
+  btn.textContent = "\u2713 Demande envoy\u00E9e -- nous vous contactons sous 24h";
+  btn.disabled = true;
+  btn.style.background = "#059669";
+}
+
+
+// -- DEMO INTERACTIVE --------------------------
+let demoTab = 0;
+let incStep = 1;
+
+const demoUrls = [
+  "app.qhsecontrol.africa / incidents / nouveau",
+  "app.qhsecontrol.africa / audits / iso-45001",
+  "app.qhsecontrol.africa / dashboard"
+];
+
+function switchTab(idx) {
+  // deactivate all tabs & screens
+  for (let i = 0; i < 3; i++) {
+    document.getElementById("tab" + i)?.classList.remove("active");
+    document.getElementById("screen" + i)?.classList.remove("active");
+    document.querySelectorAll(".demo-dot")[i]?.classList.remove("active");
+  }
+  // activate selected
+  document.getElementById("tab" + idx)?.classList.add("active");
+  document.getElementById("screen" + idx)?.classList.add("active");
+  document.querySelectorAll(".demo-dot")[idx]?.classList.add("active");
+  document.getElementById("demoUrl").textContent = demoUrls[idx];
+  demoTab = idx;
+
+  // reset incident steps when switching back
+  if (idx === 0) resetIncident();
+
+  // prev/next buttons
+  document.getElementById("demoPrev").disabled = (idx === 0);
+  document.getElementById("demoNext").disabled = (idx === 2);
+}
+
+function demoNav(dir) { switchTab(Math.max(0, Math.min(2, demoTab + dir))); }
+function demoNavTo(idx) { switchTab(idx); }
+
+// Incident steps
+function nextIncidentStep() {
+  if (incStep === 1) {
+    document.getElementById("inc-step1").style.display = "none";
+    document.getElementById("inc-step2").style.display = "block";
+    document.getElementById("incidentNextBtn").textContent = "G\u00E9n\u00E9rer le plan d\'\2ctions ?";
+    incStep = 2;
+    // animate AI lines then show result
+    setTimeout(() => {
+      document.getElementById("aiResult").style.display = "block";
+      document.querySelector("#inc-step2 .app-ai-header").textContent = "? Analyse termin?e -- 3 causes identifi?es";
+    }, 1800);
+  } else if (incStep === 2) {
+    document.getElementById("inc-step2").style.display = "none";
+    document.getElementById("inc-step3").style.display = "block";
+    document.getElementById("incidentNextBtn").textContent = "Cl?turer l\'\2ncident";
+    document.getElementById("incidentNextBtn").disabled = true;
+    incStep = 3;
+    setTimeout(() => { document.getElementById("incidentNextBtn").disabled = false; }, 400);
+  }
+}
+
+function resetIncident() {
+  incStep = 1;
+  document.getElementById("inc-step1").style.display = "block";
+  document.getElementById("inc-step2").style.display = "none";
+  document.getElementById("inc-step3").style.display = "none";
+  document.getElementById("aiResult").style.display = "none";
+  const btn = document.getElementById("incidentNextBtn");
+  if (btn) { btn.textContent = "\u00C9tape suivante \u2192"; btn.disabled = false; }
+}
+
+
+// -- FAQ --
+function faqToggle(el) {
+  var ans = el.nextElementSibling;
+  var isOpen = ans.classList.contains("fopen");
+  document.querySelectorAll(".faq-q").forEach(function(q) { q.classList.remove("fopen"); });
+  document.querySelectorAll(".faq-a").forEach(function(a) { a.classList.remove("fopen"); });
+  if (!isOpen) { el.classList.add("fopen"); ans.classList.add("fopen"); }
+}
+function faqFilter(cat, btn) {
+  document.querySelectorAll(".faq-cat").forEach(function(c) { c.classList.remove("fon"); });
+  btn.classList.add("fon");
+  document.querySelectorAll(".faq-item").forEach(function(item) {
+    item.style.display = (cat === "all" || item.dataset.fcat === cat) ? "" : "none";
+  });
+}
+
+</script>

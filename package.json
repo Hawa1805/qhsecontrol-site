@@ -1,0 +1,11 @@
+{
+  "name": "qhsecontrol-site",
+  "version": "1.0.0",
+  "description": "QHSE Control Landing Page",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
